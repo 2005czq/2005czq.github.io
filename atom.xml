@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://2005czq.github.io</id>
     <title>CZQ-King</title>
-    <updated>2020-02-26T04:50:50.938Z</updated>
+    <updated>2020-02-26T05:00:17.882Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://2005czq.github.io"/>
     <link rel="self" href="https://2005czq.github.io/atom.xml"/>
@@ -23,12 +23,11 @@
 <h2 id="关于我">关于我</h2>
 <h3 id="博客概况">博客概况</h3>
 <p>这个博客主要涉及数学、计算机科学、学习笔记等方面。<br>
-<s>如果不出意外，博客每周会更<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>篇。即使会少也会赶回来。</s><br>
+<s>如果不出意外，博客每周会更 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 篇。即使会少也会赶回来。</s><br>
 不定时更新，有灵感就更新。<br>
 另外，我是<code>C++</code>党，所以你所见到的代码几乎都是<code>C++</code>的，略懂<code>Python</code>，<s>以及精通<code>Scratch</code></s>。</p>
-<h3 id="博客网站上的2005czq是什么为什么是2019711">博客网站上的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2005</mn><mi>c</mi><mi>z</mi><mi>q</mi></mrow><annotation encoding="application/x-tex">2005czq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">0</span><span class="mord">5</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span></span></span></span>是什么？为什么是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2019.7.11</mn></mrow><annotation encoding="application/x-tex">2019.7.11</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">1</span><span class="mord">9</span><span class="mord">.</span><span class="mord">7</span><span class="mord">.</span><span class="mord">1</span><span class="mord">1</span></span></span></span>？</h3>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2005</mn></mrow><annotation encoding="application/x-tex">2005</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">0</span><span class="mord">5</span></span></span></span>是我的出生日期，而<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>z</mi><mi>q</mi></mrow><annotation encoding="application/x-tex">czq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span></span></span></span>是我的名字。<br>
-而<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2019.7.11</mn></mrow><annotation encoding="application/x-tex">2019.7.11</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">1</span><span class="mord">9</span><span class="mord">.</span><span class="mord">7</span><span class="mord">.</span><span class="mord">1</span><span class="mord">1</span></span></span></span>是博客创建之日，也是刚考完试的第一天。</p>
+<h3 id="博客网站上的-2005czq-是什么">博客网站上的 2005czq 是什么？</h3>
+<p>2005 是我的出生年份，而 czq 是我的名字。</p>
 <h3 id="如何联系我">如何联系我</h3>
 <blockquote>
 <p>QQ<a href="https://wpa.qq.com/msgrd?v=3&amp;uin=3376299315">3376299315</a><br>
@@ -36,10 +35,10 @@
 洛谷博客：<a href="https://3-3-7-6-2-9-9-3-1-5.blog.luogu.org/">戳我</a><br>
 QQ 邮箱： <a href="mailto:3376299315@qq.com">3376299315@qq.com</a></p>
 </blockquote>
-<p>另外可以<a href="https://github.com/2005czq">Github</a>联系，但是不常上<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mi>i</mi><mi>t</mi><mi>h</mi><mi>u</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">Github</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">G</span><span class="mord mathdefault">i</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">u</span><span class="mord mathdefault">b</span></span></span></span>。<br>
+<p>另外，这是我的 <a href="https://github.com/2005czq">Github</a> 联系，但是不常上 Github。<br>
 或者可以在下面评论，也是可以收到通知的。</p>
 <h2 id="友链">友链</h2>
-<p>如果您希望在此推广您的博客，或希望与鄙人蕉♂个朋友，我们可以互加友链，相互交流学习。<br>
+<p>如果您希望在此推广您的博客，或希望与鄙人交个朋友，我们可以互加友链，相互交流学习。<br>
 可以通过上面的方式联系我，也可以在下方评论。<br>
 博客要求：</p>
 <ol>
@@ -56,15 +55,15 @@ QQ 邮箱： <a href="mailto:3376299315@qq.com">3376299315@qq.com</a></p>
 <p><a href="http://2005czq.github.io/links/">友链页面</a></p>
 <h2 id="温馨提示">温馨提示</h2>
 <ol>
-<li>在浏览本站时，因评论系统不支持<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi><mi>a</mi><mi>r</mi><mi>k</mi><mi>d</mi><mi>o</mi><mi>w</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">Markdown</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">d</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault">n</span></span></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span>，所以可<a href="https://2005czq.github.io/2019/Hello-World/#%E5%A6%82%E4%BD%95%E8%81%94%E7%B3%BB%E6%88%91">联系我</a>进行沟通。</li>
-<li>如果您发现我们的文章有误，可以联系我们，也可以在文章下面的评论区指正，感谢！</li>
+<li>注意，评论系统不支持 Markdown 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span>。</li>
+<li>如果您发现文章有误，可以联系我，也可以在文章下面的评论区指正，感谢！</li>
 <li>本博客所有文章 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</li>
 <li>如果您的浏览器显示不了公式、图片或排版有问题的，请尝试更换(更新)<a href="https://google.cn/chrome"><code>Chrome浏览器</code></a>。</li>
 </ol>
 <h2 id="大事记">大事记</h2>
 <ul>
 <li><code>2019.7.11</code> 我出生辣。</li>
-<li><code>2020.2.26</code> 博客更换为<a href="https://gridea.dev/">Gridea</a>。</li>
+<li><code>2020.2.26</code> 博客更换为 <a href="https://gridea.dev/">Gridea</a>。</li>
 </ul>
 ]]></content>
     </entry>
