@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://2005czq.github.io</id>
     <title>CZQ-King</title>
-    <updated>2020-02-26T04:46:14.955Z</updated>
+    <updated>2020-02-26T04:50:50.938Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://2005czq.github.io"/>
     <link rel="self" href="https://2005czq.github.io/atom.xml"/>
@@ -20,10 +20,6 @@
 ]]></summary>
         <content type="html"><![CDATA[<p><strong>在浏览本站前，请先务必阅读此篇文章。</strong></p>
 <!--more-->
-<figure data-type="image" tabindex="1"><img src="%5Cimages%5Cavatar.png" alt="" loading="lazy"></figure>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathsize="2.488em"><mn>2019.7.11</mn></mstyle></mrow><annotation encoding="application/x-tex">\Huge2019.7.11
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.6033667200000001em;vertical-align:0em;"></span><span class="mord sizing reset-size6 size11">2</span><span class="mord sizing reset-size6 size11">0</span><span class="mord sizing reset-size6 size11">1</span><span class="mord sizing reset-size6 size11">9</span><span class="mord sizing reset-size6 size11">.</span><span class="mord sizing reset-size6 size11">7</span><span class="mord sizing reset-size6 size11">.</span><span class="mord sizing reset-size6 size11">1</span><span class="mord sizing reset-size6 size11">1</span></span></span></span></span></p>
-<hr>
 <h2 id="关于我">关于我</h2>
 <h3 id="博客概况">博客概况</h3>
 <p>这个博客主要涉及数学、计算机科学、学习笔记等方面。<br>
