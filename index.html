@@ -7,7 +7,7 @@
 <meta name="description" content="Doing is better than saying.&lt;br&gt;数学 | 人工智能 | Bilibili | 电音">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://2005czq.github.io/favicon.ico?v=1582699729100">
+<link rel="shortcut icon" href="https://2005czq.github.io/favicon.ico?v=1582702911396">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
@@ -83,7 +83,7 @@
           
   <article class="article">
     <h2 class="article-title">
-      <a href="https://2005czq.github.io/hello_world/">Hello,World!</a>
+      <a href="https://2005czq.github.io/about/">Hello,World!</a>
     </h2>
     <p class="article-meta">
       2019-07-11
@@ -94,7 +94,7 @@
 
     </p>
     <div class="row">
-      <a href="https://2005czq.github.io/hello_world/" class="readmore-link">
+      <a href="https://2005czq.github.io/about/" class="readmore-link">
         <button>
           阅读更多
         </button>
@@ -114,7 +114,7 @@
       
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
-    <img src="https://2005czq.github.io/images/avatar.png?v=1582699729100" class="no-responsive avatar">
+    <img src="https://2005czq.github.io/images/avatar.png?v=1582702911396" class="no-responsive avatar">
     <div class="text-muted">Doing is better than saying.<br>数学 | 人工智能 | Bilibili | 电音</div>
     <div class="social-container">
       
@@ -143,7 +143,7 @@
         
           
             <li>
-              <a href="https://2005czq.github.io/hello_world/">Hello,World!</a>
+              <a href="https://2005czq.github.io/about/">Hello,World!</a>
             </li>
           
         
@@ -165,7 +165,41 @@
     </div>
   </div>
   <div class="paper">
-    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://2005czq.github.io/atom.xml" target="_blank">RSS</a>
+    </span>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv"><i class="fa fa-user" aria-hidden="true"></i></span> </span><span id="busuanzi_value_site_uv"></span> | </span><span id="busuanzi_container_site_pv"><i class="fa fa-eye" aria-hidden="true"></i></span> </span><span id="busuanzi_value_site_pv"></span></span>
+<br>
+<span id="timeDate">载入天数...</span>
+
+<span id="times">载入时分秒...</span>
+<script>
+
+    var now = new Date();
+
+    function createtime() {
+
+        var grt= new Date("07/11/2019 00:00:00");        now.setTime(now.getTime()+250);
+
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+
+        document.getElementById("timeDate").innerHTML = "已运行"+dnum+"天";
+
+        document.getElementById("times").innerHTML = hnum + "小时" + mnum + "分" + snum + "秒";
+    }
+
+setInterval("createtime()",250);
+
+</script>
+<br>© 2019-2020 | CZQ-King | <a class="rss" href="https://2005czq.github.io/atom.xml" target="_blank">RSS</a>
   </div>
 </div>
 
