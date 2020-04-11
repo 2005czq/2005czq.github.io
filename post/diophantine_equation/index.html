@@ -1,16 +1,18 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
+    
+<meta charset="utf-8" >
 
 <title>[研究] 丢番图方程 | CZQ-King</title>
 <meta name="description" content="Doing is better than saying.&lt;br&gt;数学 | 人工智能 | Bilibili | 电音">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://2005czq.github.io/favicon.ico?v=1583889095631">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="shortcut icon" href="https://2005czq.github.io/favicon.ico?v=1586592980074">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://2005czq.github.io/styles/main.css">
 
@@ -21,90 +23,96 @@
 
   
 
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
   </head>
   <body>
-  
-    <nav class="navbar border fixed split-nav">
-  <div class="nav-brand">
-    <h3><a href="https://2005czq.github.io">CZQ-King</a></h3>
-  </div>
-  <div class="collapsible">
-    <input id="collapsible1" type="checkbox" name="collapsible1">
-    <button>
-      <label for="collapsible1">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </label>
-    </button>
-    <div class="collapsible-body">
-      <ul class="inline">
-        
-          <li>
-            
-              <a href="/" class="menu">
-                首页
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/archives" class="menu">
-                归档
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/tags" class="menu">
-                标签
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/about" class="menu">
-                关于
-              </a>
-            
-          </li>
-        
-      </ul>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://2005czq.github.io">
+        <img class="avatar" src="https://2005czq.github.io/images/avatar.png?v=1586592980074" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://2005czq.github.io">
+        <h1 class="site-title">CZQ-King</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
     </div>
   </div>
-</nav>
+</div>
 
-    <div id="top" class="row site">
-      <div class="sm-12 md-8 col">
-        <div class="paper">
-          <article class="article">
-            <h1>[研究] 丢番图方程</h1>
-            <p class="article-meta">
-              2019-12-15
-              
-                <a href="https://2005czq.github.io/tag/9lV4pROxA/" class="badge secondary">
-                  不定方程
-                </a>
-              
-                <a href="https://2005czq.github.io/tag/fagm3iijxL/" class="badge secondary">
-                  裴蜀定理
-                </a>
-              
-            </p>
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://cdn.pixabay.com/photo/2013/06/25/05/42/einstein-141057_960_720.jpg')">
+            </div>
+          
+          <h2 class="post-title">[研究] 丢番图方程</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-12-15</span>
             
-              <img src="https://cdn.pixabay.com/photo/2013/06/25/05/42/einstein-141057_960_720.jpg" alt="[研究] 丢番图方程">
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://2005czq.github.io/tag/9lV4pROxA/">
+                    不定方程
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://2005czq.github.io/tag/fagm3iijxL/">
+                    裴蜀定理
+                    
+                  </a>
+                
+              </span>
             
-            <div class="post-content">
-              <p>（图文无关）<br>
+          </div>
+          <div class="post-content">
+            <p>（图文无关）<br>
 快一个月没更新了，主要是因为<s>段测问题</s>懒<br>
 在课间看<code>《思考的乐趣》</code>，发现这么一道有趣的题：</p>
 <blockquote>
@@ -149,146 +157,56 @@
 <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∴</mo><mrow><mo fence="true">{</mo><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>x</mi><mo>=</mo><msup><mn>2</mn><mfrac><mrow><mi>c</mi><mi>m</mi><mo>−</mo><mn>1</mn></mrow><mi>a</mi></mfrac></msup></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>y</mi><mo>=</mo><msup><mn>2</mn><mfrac><mrow><mi>c</mi><mi>m</mi><mo>−</mo><mn>1</mn></mrow><mi>b</mi></mfrac></msup></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>z</mi><mo>=</mo><msup><mn>2</mn><mi>m</mi></msup></mrow></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">\therefore\begin{cases}x=2^{\frac{cm-1}{a}}\\y=2^{\frac{cm-1}{b}}\\z=2^m\end{cases}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69224em;vertical-align:0em;"></span><span class="mrel amsrm">∴</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:4.32em;vertical-align:-1.9099999999999997em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.35002em;"><span style="top:-2.19999em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎩</span></span></span><span style="top:-2.19999em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-3.1500100000000004em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎨</span></span></span><span style="top:-4.30001em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-4.60002em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎧</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.8500199999999998em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.41em;"><span style="top:-4.41em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9540200000000001em;"><span style="top:-3.363em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8443142857142857em;"><span style="top:-2.656em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">a</span></span></span></span><span style="top:-3.2255000000000003em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em;"></span></span><span style="top:-3.384em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight">m</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.344em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span></span></span></span></span></span></span></span></span></span></span><span style="top:-2.97em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9540200000000001em;"><span style="top:-3.363em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8443142857142857em;"><span style="top:-2.656em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">b</span></span></span></span><span style="top:-3.2255000000000003em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em;"></span></span><span style="top:-3.384em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight">m</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.344em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span></span></span></span></span></span></span></span></span></span></span><span style="top:-1.5300000000000002em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">m</span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.9099999999999997em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span><br>
 证毕。</p>
 
-            </div>
-          </article>
+          </div>
         </div>
-        <div class="paper" data-aos="fade-in">
-          
-            <div class="next-post">
-              <div class="next">
-                下一篇
-              </div>
-              <a href="https://2005czq.github.io/post/2019_antumntrip/">
-                <h3 class="post-title">
-                  [生活] 2019年秋季研学活动
-                </h3>
-              </a>
-            </div>
-          
-        </div>
-        
-          
-            <div class="paper" data-aos="fade-in">
-              <div id="gitalk-container"></div>
-            </div>
-          
 
-          
         
+          <div class="next-post">
+            <a class="purple-link" href="https://2005czq.github.io/post/2019_antumntrip/">
+              <h3 class="post-title">
+                下一篇：[生活] 2019年秋季研学活动
+              </h3>
+            </a>
+          </div>
+          
       </div>
 
-      <div class="sm-12 md-4 col sidebar">
-  <div class="paper info-container">
-    <img src="https://2005czq.github.io/images/avatar.png?v=1583889095631" class="no-responsive avatar">
-    <div class="text-muted">Doing is better than saying.<br>数学 | 人工智能 | Bilibili | 电音</div>
-    <div class="social-container">
       
         
-          <a href="https://github.com/2005czq" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
+          <div id="gitalk-container"></div>
+        
+
         
       
-        
+
+      <div class="site-footer">
+  <div class="slogan">Doing is better than saying.<br>数学 | 人工智能 | Bilibili | 电音</div>
+  <div class="social-container">
+    
       
-        
+        <a href="https://github.com/2005czq" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
       
-        
+    
       
-        
+    
       
-    </div>
+        <a href="https://weibo.com/2005czq" target="_blank">
+          <i class="fab fa-weibo"></i>
+        </a>
+      
+    
+      
+        <a href="https://www.zhihu.com/people/czq-king" target="_blank">
+          <i class="fab fa-zhihu"></i>
+        </a>
+      
+    
+      
+    
   </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      最新文章
-    </div>
-    <div class="row">
-      <ul>
-        
-          
-            <li>
-              <a href="https://2005czq.github.io/post/encounter_problems/">[研究] 相遇问题</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://2005czq.github.io/post/magic_square/">[研究] 神秘正方形</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://2005czq.github.io/post/diophantine_equation/">[研究] 丢番图方程</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://2005czq.github.io/post/2019_antumntrip/">[生活] 2019年秋季研学活动</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://2005czq.github.io/post/continuous_fraction/">[研究] 连分数问题</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://2005czq.github.io/post/discuss_i/">[科普] 揭开 i 的神秘面纱</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://2005czq.github.io/post/about/">Hello,World!</a>
-            </li>
-          
-        
-      </ul>
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      标签列表
-    </div>
-    <div class="row">
-      
-        <a href="https://2005czq.github.io/tag/E-Koig3Wf/" class="badge warning">
-          生成函数
-        </a>
-      
-        <a href="https://2005czq.github.io/tag/cu3lc03oNM/" class="badge success">
-          相遇问题
-        </a>
-      
-        <a href="https://2005czq.github.io/tag/9lV4pROxA/" class="badge warning">
-          不定方程
-        </a>
-      
-        <a href="https://2005czq.github.io/tag/fagm3iijxL/" class="badge secondary">
-          裴蜀定理
-        </a>
-      
-        <a href="https://2005czq.github.io/tag/DzqxARmps/" class="badge warning">
-          连分数
-        </a>
-      
-        <a href="https://2005czq.github.io/tag/CvsNf3Znb/" class="badge secondary">
-          欧拉恒等式
-        </a>
-      
-        <a href="https://2005czq.github.io/tag/fHTIwgIxhG/" class="badge secondary">
-          复数
-        </a>
-      
-    </div>
-  </div>
-  <div class="paper">
-    </span>
+  </span>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv"><i class="fa fa-user" aria-hidden="true"></i></span> </span><span id="busuanzi_value_site_uv"></span> | </span><span id="busuanzi_container_site_pv"><i class="fa fa-eye" aria-hidden="true"></i></span> </span><span id="busuanzi_value_site_pv"></span></span>
 <br>
 <span id="timeDate">载入天数...</span>
@@ -323,19 +241,20 @@ setInterval("createtime()",250);
 
 </script>
 <br>© 2019-2020 | CZQ-King | <a class="rss" href="https://2005czq.github.io/atom.xml" target="_blank">RSS</a>
-  </div>
 </div>
 
 
     </div>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-<script type="application/javascript">
-
-AOS.init();
+    <script type="application/javascript">
 
 hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
 
