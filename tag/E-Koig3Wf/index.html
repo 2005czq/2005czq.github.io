@@ -6,13 +6,30 @@
 <meta charset="utf-8" >
 
 <title>生成函数 | CZQ-King</title>
-<meta name="description" content="Doing is better than saying.&lt;br&gt;数学 | 人工智能 | Bilibili | 电音">
+<meta name="description" content="&lt;div class=&#39;colorful&#39;&gt;『若君欲见极好之世界 则令界先见极好之君』&lt;/div&gt;&lt;br&gt;
+&lt;script src=&#34;https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js&#34;&gt;&lt;/script&gt;
+&lt;!--End--&gt;
+&lt;script&gt;
+  fetch(&#39;https://v1.hitokoto.cn&#39;)
+    .then(function (res){
+      return res.json();
+    })
+    .then(function (data) {
+      var hitokoto = document.getElementById(&#39;hitokoto&#39;);
+      hitokoto.innerText =&#39;『&#39; + data.hitokoto + &#39;』——「&#39; + data.from + &#39;」&#39;;
+    })
+    .catch(function (err) {
+      console.error(err);
+    })
+&lt;/script&gt;
+&lt;p id=&#34;hitokoto&#34;&gt;载入一言ing...&lt;/p&gt;">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://2005czq.github.io/favicon.ico?v=1597801622385">
+<link rel="shortcut icon" href="https://2005czq.github.io/favicon.ico?v=1603606364416">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://2005czq.github.io/styles/main.css">
 
@@ -30,7 +47,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://2005czq.github.io">
-        <img class="avatar" src="https://2005czq.github.io/images/avatar.png?v=1597801622385" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://2005czq.github.io/images/avatar.png?v=1603606364416" alt="" width="32px" height="32px">
       </a>
       <a href="https://2005czq.github.io">
         <h1 class="site-title">CZQ-King</h1>
@@ -135,7 +152,24 @@
       </div>
 
       <div class="site-footer">
-  <div class="slogan">Doing is better than saying.<br>数学 | 人工智能 | Bilibili | 电音</div>
+  <div class="slogan"><div class='colorful'>『若君欲见极好之世界 则令界先见极好之君』</div><br>
+<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+<!--End-->
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(function (res){
+      return res.json();
+    })
+    .then(function (data) {
+      var hitokoto = document.getElementById('hitokoto');
+      hitokoto.innerText ='『' + data.hitokoto + '』——「' + data.from + '」';
+    })
+    .catch(function (err) {
+      console.error(err);
+    })
+</script>
+<p id="hitokoto">载入一言ing...</p></div>
   <div class="social-container">
     
       
@@ -164,32 +198,21 @@
   </span>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv"><i class="fa fa-user" aria-hidden="true"></i></span> </span><span id="busuanzi_value_site_uv"></span> | </span><span id="busuanzi_container_site_pv"><i class="fa fa-eye" aria-hidden="true"></i></span> </span><span id="busuanzi_value_site_pv"></span></span>
 <br>
-<span id="timeDate">载入天数...</span>
-
+<span id="timeDate">载入天数ing...</span>
 <span id="times">载入时分秒...</span>
 <script>
-
     var now = new Date();
-
     function createtime() {
-
-        var grt= new Date("07/11/2019 00:00:00");        now.setTime(now.getTime()+250);
-
+        var grt= new Date("07/11/2019 00:00:00");
+        now.setTime(now.getTime()+250);
         days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
-
         hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
-
         if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-
         mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
-
         seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-
         snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-
-        document.getElementById("timeDate").innerHTML = "已运行"+dnum+"天";
-
-        document.getElementById("times").innerHTML = hnum + "小时" + mnum + "分" + snum + "秒";
+        document.getElementById("timeDate").innerHTML = "本站已低调存活"+dnum+"天";
+        document.getElementById("times").innerHTML=hnum+"小时"+mnum+"分"+snum+"秒";
     }
 
 setInterval("createtime()",250);
