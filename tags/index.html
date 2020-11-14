@@ -1,166 +1,303 @@
-<html>
-  <head>
-    
-<meta charset="utf-8" >
+<!DOCTYPE html>
+<html lang="zh-CN">
 
+<head>
+	<meta charset="UTF-8" />
 <title>CZQ-King</title>
-<meta name="description" content="&lt;div class=&#39;colorful&#39;&gt;『若君欲见极好之世界 则令界先见极好之君』&lt;/div&gt;&lt;br&gt;
-&lt;script src=&#34;https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js&#34;&gt;&lt;/script&gt;
-&lt;!--End--&gt;
-&lt;script&gt;
-  fetch(&#39;https://v1.hitokoto.cn&#39;)
-    .then(function (res){
-      return res.json();
-    })
-    .then(function (data) {
-      var hitokoto = document.getElementById(&#39;hitokoto&#39;);
-      hitokoto.innerText =&#39;『&#39; + data.hitokoto + &#39;』——「&#39; + data.from + &#39;」&#39;;
-    })
-    .catch(function (err) {
-      console.error(err);
-    })
-&lt;/script&gt;
-&lt;p id=&#34;hitokoto&#34;&gt;载入一言ing...&lt;/p&gt;">
-
+<meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://2005czq.github.io/favicon.ico?v=1604105324807">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://2005czq.github.io/styles/main.css">
+<link type='text/css' rel='stylesheet' href='https://2005czq.github.io/styles/main.css' media='screen' />
+<link type="text/css" rel="stylesheet" href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css">
+<link type="text/css" rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script type="text/javascript" src='https://2005czq.github.io/media/scripts/jquery.js'></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</head>
+
+<body>
+	<div class="layout theme-dark">
+		<div class="layout-header">
+
+	<div class="layout-header-main">
+		<div class="container">
+			<div class="row justify-content-lg-center">
+				<div class="col-12 col-lg-9">
+
+					<div class="navbar">
+
+						<div class="logo">
+							<a href="https://2005czq.github.io">
+								<img class="logo"
+									src="https://2005czq.github.io/media/images/site_avatar.png?v=1605332853050"
+									alt="">
+							</a>
+						</div>
+
+						<div class="menu d-md-inline-block d-none">
+							<ul class="layout-navigation-list">
+								
+								<li class="layout-navigation-item"><a title="首页"
+										href="/">首页</a>
+								</li>
+								
+								<li class="layout-navigation-item"><a title="归档"
+										href="/archives">归档</a>
+								</li>
+								
+								<li class="layout-navigation-item"><a title="标签"
+										href="/tags">标签</a>
+								</li>
+								
+								<li class="layout-navigation-item"><a title="关于"
+										href="/post/about">关于</a>
+								</li>
+								
+							</ul>
+						</div>
+
+						<div class="item d-md-inline-block d-none">
+							<div class="search-icon">
+								<i class="fa fa-search" aria-hidden="true"></i>
+							</div>
+						</div>
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+						<div class="d-md-inline-block d-none">
+							<div class="search-lightbox">
+								<div class="search-body">
+
+									<form id="gridea-search-form" data-update="1605332853050" action="/search/" class="search-form">
+										<input type="text" name="q" id="s" value="" class="search-field" placeholder="请输入搜索关键词" aria-label="请输入搜索关键词" required="">
+										<button type="submit" class="submit" aria-label="Submit">
+											<i class="fa fa-search" aria-hidden="true"></i>
+										</button>
+									</form>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="nav d-md-none d-inline-block">
+							<div class="trigger">
+								<i class="fa fa-bars layout-btn-toggle" aria-hidden="true"></i>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
 
 
 
-  </head>
-  <body>
-    <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://2005czq.github.io">
-        <img class="avatar" src="https://2005czq.github.io/images/avatar.png?v=1604105324807" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://2005czq.github.io">
-        <h1 class="site-title">CZQ-King</h1>
-      </a>
-    </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
-  </div>
+
+		</div>
+	</div>
+
+</div>
+		<div class="layout-collapse d-md-none">
+	<div class="layout-collapse-main">
+		<ul class="layout-collapse-list">
+			
+			<li class="layout-collapse-item"><a title="首页" href="/">首页</a></li>
+			
+			<li class="layout-collapse-item"><a title="归档" href="/archives">归档</a></li>
+			
+			<li class="layout-collapse-item"><a title="标签" href="/tags">标签</a></li>
+			
+			<li class="layout-collapse-item"><a title="关于" href="/post/about">关于</a></li>
+			
+
+		</ul>
+	</div>
 </div>
 
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
-      
-        
-          <a href="/" class="menu purple-link">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="menu purple-link">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="menu purple-link">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="menu purple-link">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-</transition>
+		<div class="layout-content">
+			<div class="layout-content-main">
+				<div class="container">
+					<div class="row justify-content-lg-center">
+						<div class="col-12 col-lg-9">
+							<div class="layout-tags row">
+								
+								<div class="col-6 mb-3">
+									<div class="card">
+										<div class="card-header">
+											<div class="header-content">
+												<div class="title">公式</div>
+											</div>
+										</div>
+										<div class="card-body">
+											<div class="card-item">
+												<div class="list-content">
+													<div class="list-body">
+														<div class="title" href=""><span> 2 </span> 篇文章</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-6 mb-3">
+									<div class="card">
+										<div class="card-header">
+											<div class="header-content">
+												<div class="title">游记</div>
+											</div>
+										</div>
+										<div class="card-body">
+											<div class="card-item">
+												<div class="list-content">
+													<div class="list-body">
+														<div class="title" href=""><span> 2 </span> 篇文章</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-6 mb-3">
+									<div class="card">
+										<div class="card-header">
+											<div class="header-content">
+												<div class="title">生成函数</div>
+											</div>
+										</div>
+										<div class="card-body">
+											<div class="card-item">
+												<div class="list-content">
+													<div class="list-body">
+														<div class="title" href=""><span> 1 </span> 篇文章</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-6 mb-3">
+									<div class="card">
+										<div class="card-header">
+											<div class="header-content">
+												<div class="title">不定方程</div>
+											</div>
+										</div>
+										<div class="card-body">
+											<div class="card-item">
+												<div class="list-content">
+													<div class="list-body">
+														<div class="title" href=""><span> 1 </span> 篇文章</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-6 mb-3">
+									<div class="card">
+										<div class="card-header">
+											<div class="header-content">
+												<div class="title">裴蜀定理</div>
+											</div>
+										</div>
+										<div class="card-body">
+											<div class="card-item">
+												<div class="list-content">
+													<div class="list-body">
+														<div class="title" href=""><span> 1 </span> 篇文章</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-6 mb-3">
+									<div class="card">
+										<div class="card-header">
+											<div class="header-content">
+												<div class="title">连分数</div>
+											</div>
+										</div>
+										<div class="card-body">
+											<div class="card-item">
+												<div class="list-content">
+													<div class="list-body">
+														<div class="title" href=""><span> 1 </span> 篇文章</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-6 mb-3">
+									<div class="card">
+										<div class="card-header">
+											<div class="header-content">
+												<div class="title">黑洞</div>
+											</div>
+										</div>
+										<div class="card-body">
+											<div class="card-item">
+												<div class="list-content">
+													<div class="list-body">
+														<div class="title" href=""><span> 1 </span> 篇文章</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 
-        <div class="content-container">
-          
-          <div class="tags-container">
-            
-              <a class="tag" href="https://2005czq.github.io/tag/-rqiHNK5x/">公式</a>
-            
-              <a class="tag" href="https://2005czq.github.io/tag/VLOMRZRtq/">游记</a>
-            
-              <a class="tag" href="https://2005czq.github.io/tag/E-Koig3Wf/">生成函数</a>
-            
-              <a class="tag" href="https://2005czq.github.io/tag/9lV4pROxA/">不定方程</a>
-            
-              <a class="tag" href="https://2005czq.github.io/tag/fagm3iijxL/">裴蜀定理</a>
-            
-              <a class="tag" href="https://2005czq.github.io/tag/DzqxARmps/">连分数</a>
-            
-              <a class="tag" href="https://2005czq.github.io/tag/qIGQhiI-8/">黑洞</a>
-            
-          </div>
 
-        </div>
+			<div class="layout-footer">
 
-        <div class="site-footer">
-  <div class="slogan"><div class='colorful'>『若君欲见极好之世界 则令界先见极好之君』</div><br>
-<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
-<!--End-->
-<script>
-  fetch('https://v1.hitokoto.cn')
-    .then(function (res){
-      return res.json();
-    })
-    .then(function (data) {
-      var hitokoto = document.getElementById('hitokoto');
-      hitokoto.innerText ='『' + data.hitokoto + '』——「' + data.from + '」';
-    })
-    .catch(function (err) {
-      console.error(err);
-    })
-</script>
-<p id="hitokoto">载入一言ing...</p></div>
-  <div class="social-container">
-    
-      
-        <a href="https://github.com/2005czq" target="_blank">
-          <i class="fab fa-github"></i>
-        </a>
-      
-    
-      
-    
-      
-        <a href="https://weibo.com/2005czq" target="_blank">
-          <i class="fab fa-weibo"></i>
-        </a>
-      
-    
-      
-        <a href="https://www.zhihu.com/people/czq-king" target="_blank">
-          <i class="fab fa-zhihu"></i>
-        </a>
-      
-    
-      
-    
-  </div>
-  </span>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv"><i class="fa fa-user" aria-hidden="true"></i></span> </span><span id="busuanzi_value_site_uv"></span> | </span><span id="busuanzi_container_site_pv"><i class="fa fa-eye" aria-hidden="true"></i></span> </span><span id="busuanzi_value_site_pv"></span></span>
-<br>
+		<div class="container">
+			<div class="row justify-content-lg-center">
+				<div class="col-12 col-lg-9">
+					<div class="footer">
+						<div class="row">
+							<div class="col-12 col-md-9">
+								<div class="footer-copy">
+									
+									<span>© 2019-2020 |  </span>
+									<a href="https://2005czq.github.io" title="CZQ-King">CZQ-King</a>
+									<span class="px-2">⋅</span>
+									
+									<style>
+  .colorful{
+	background-image: linear-gradient(to bottom, #ED4264, #FFEDBC);
+	color: transparent;
+	-webkit-background-clip: text;
+  }
+</style>
+
+<div class='colorful'>『若君欲见极好之世界 则令界先见极好之君』</div>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv">访客<span id="busuanzi_value_site_pv"></span>人 | </span>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_uv">访问<span id="busuanzi_value_site_uv"></span>次</span>
+
 <span id="timeDate">载入天数ing...</span>
 <span id="times">载入时分秒...</span>
 <script>
@@ -177,31 +314,81 @@
         document.getElementById("timeDate").innerHTML = "本站已低调存活"+dnum+"天";
         document.getElementById("times").innerHTML=hnum+"小时"+mnum+"分"+snum+"秒";
     }
-
 setInterval("createtime()",250);
-
-</script>
-<br>© 2019-2020 | CZQ-King | <a class="rss" href="https://2005czq.github.io/atom.xml" target="_blank">RSS</a>
-</div>
-
-
-      </div>
-      <script type="application/javascript">
-
-hljs.initHighlightingOnLoad()
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
-
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(function (res){
+      return res.json();
+    })
+    .then(function (data) {
+      var hitokoto = document.getElementById('hitokoto');
+      hitokoto.innerText ='『' + data.hitokoto + '』——「' + data.from + '」';
+    })
+    .catch(function (err) {
+      console.error(err);
+    })
+</script>
+<p id="hitokoto">载入一言ing...</p>
+									<div class="footer-icp d-none d-sm-inline-block">
+										<span class="px-2">⋅</span>
+										
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3 d-none d-md-block">
+								<div class="footer-links">
+									
+									
+									
+									
+									<span class="footer-links-item">
+										<a href="https://github.com/2005czq" target="_blank">
+											<i class="fa fa-github" aria-hidden="true"></i>
+										</a>
+									</span>
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									<span class="footer-links-item">
+										<a href="https://wpa.qq.com/msgrd?v=3&amp;uin=3376299315" target="_blank">
+											<i class="fa fa-qq" aria-hidden="true"></i>
+										</a>
+									</span>
+									
+									
+									
+									<span class="footer-links-item">
+										<a href="https://weibo.com/2005czq" target="_blank">
+											<i class="fa fa-weibo" aria-hidden="true"></i>
+										</a>
+									</span>
+									
+									
+									
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
+	</div>
 
+	<script type="text/javascript" src='https://2005czq.github.io/media/scripts/main.js'></script>
+	
+	</div>
+</body>
 
-    </div>
-  </body>
 </html>

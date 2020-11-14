@@ -1,128 +1,154 @@
-
 <!DOCTYPE html>
-<html>
-  <head>
-    
-<meta charset="utf-8" >
+<html lang="zh-CN">
 
-<title>[科普] 《超级公式》公式全推导 | CZQ-King</title>
-<meta name="description" content="&lt;div class=&#39;colorful&#39;&gt;『若君欲见极好之世界 则令界先见极好之君』&lt;/div&gt;&lt;br&gt;
-&lt;script src=&#34;https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js&#34;&gt;&lt;/script&gt;
-&lt;!--End--&gt;
-&lt;script&gt;
-  fetch(&#39;https://v1.hitokoto.cn&#39;)
-    .then(function (res){
-      return res.json();
-    })
-    .then(function (data) {
-      var hitokoto = document.getElementById(&#39;hitokoto&#39;);
-      hitokoto.innerText =&#39;『&#39; + data.hitokoto + &#39;』——「&#39; + data.from + &#39;」&#39;;
-    })
-    .catch(function (err) {
-      console.error(err);
-    })
-&lt;/script&gt;
-&lt;p id=&#34;hitokoto&#34;&gt;载入一言ing...&lt;/p&gt;">
-
+<head>
+  <meta charset="UTF-8" />
+<title>[科普] 《超级公式》公式全推导 - CZQ-King</title>
+<meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://2005czq.github.io/favicon.ico?v=1604105324807">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://2005czq.github.io/styles/main.css">
+<link type='text/css' rel='stylesheet' href='https://2005czq.github.io/styles/main.css' media='screen' />
+<link type="text/css" rel="stylesheet" href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css">
+<link type="text/css" rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script type="text/javascript" src='https://2005czq.github.io/media/scripts/jquery.js'></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</head>
+
+<body>
+  <div class="layout theme-dark">
+    <div class="layout-header">
+
+	<div class="layout-header-main">
+		<div class="container">
+			<div class="row justify-content-lg-center">
+				<div class="col-12 col-lg-9">
+
+					<div class="navbar">
+
+						<div class="logo">
+							<a href="https://2005czq.github.io">
+								<img class="logo"
+									src="https://2005czq.github.io/media/images/site_avatar.png?v=1605332853050"
+									alt="">
+							</a>
+						</div>
+
+						<div class="menu d-md-inline-block d-none">
+							<ul class="layout-navigation-list">
+								
+								<li class="layout-navigation-item"><a title="首页"
+										href="/">首页</a>
+								</li>
+								
+								<li class="layout-navigation-item"><a title="归档"
+										href="/archives">归档</a>
+								</li>
+								
+								<li class="layout-navigation-item"><a title="标签"
+										href="/tags">标签</a>
+								</li>
+								
+								<li class="layout-navigation-item"><a title="关于"
+										href="/post/about">关于</a>
+								</li>
+								
+							</ul>
+						</div>
+
+						<div class="item d-md-inline-block d-none">
+							<div class="search-icon">
+								<i class="fa fa-search" aria-hidden="true"></i>
+							</div>
+						</div>
 
 
-  
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
-  
 
-  
+						<div class="d-md-inline-block d-none">
+							<div class="search-lightbox">
+								<div class="search-body">
+
+									<form id="gridea-search-form" data-update="1605332853050" action="/search/" class="search-form">
+										<input type="text" name="q" id="s" value="" class="search-field" placeholder="请输入搜索关键词" aria-label="请输入搜索关键词" required="">
+										<button type="submit" class="submit" aria-label="Submit">
+											<i class="fa fa-search" aria-hidden="true"></i>
+										</button>
+									</form>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="nav d-md-none d-inline-block">
+							<div class="trigger">
+								<i class="fa fa-bars layout-btn-toggle" aria-hidden="true"></i>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
 
 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
 
+		</div>
+	</div>
 
-  </head>
-  <body>
-    <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://2005czq.github.io">
-        <img class="avatar" src="https://2005czq.github.io/images/avatar.png?v=1604105324807" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://2005czq.github.io">
-        <h1 class="site-title">CZQ-King</h1>
-      </a>
-    </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
-  </div>
+</div>
+    <div class="layout-collapse d-md-none">
+	<div class="layout-collapse-main">
+		<ul class="layout-collapse-list">
+			
+			<li class="layout-collapse-item"><a title="首页" href="/">首页</a></li>
+			
+			<li class="layout-collapse-item"><a title="归档" href="/archives">归档</a></li>
+			
+			<li class="layout-collapse-item"><a title="标签" href="/tags">标签</a></li>
+			
+			<li class="layout-collapse-item"><a title="关于" href="/post/about">关于</a></li>
+			
+
+		</ul>
+	</div>
 </div>
 
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
-      
-        
-          <a href="/" class="menu purple-link">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="menu purple-link">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="menu purple-link">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="menu purple-link">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-</transition>
+    <div class="layout-content">
+      <div class="layout-content-main">
+        <div class="container">
+          <div class="row justify-content-lg-center">
+            <div class="col-12 col-lg-9">
+              <div class="layout-post">
+                <div class="layout-post-body">
+                  <div class="row">
 
-
-      <div class="content-container">
-        <div class="post-detail">
-          
-            <div class="feature-container" style="background-image: url('https://cdn.pixabay.com/photo/2019/12/21/20/44/math-work-4711302_960_720.jpg')">
-            </div>
-          
-          <h2 class="post-title">[科普] 《超级公式》公式全推导</h2>
-          <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2020-07-22</span>
-            
-              <span>
-                <i class="icon-pricetags-outline"></i>
-                
-                  <a href="https://2005czq.github.io/tag/-rqiHNK5x/">
-                    公式
-                    
-                  </a>
-                
-              </span>
-            
-          </div>
-          <div class="post-content">
-            <p>这里是《超级公式》里所有公式的推导。</p>
+                    <div class="col-12 col-lg-10">
+                      <div class="layout-post-main m-right m-md-right">
+                        <div class="layout-post-header">
+                          <h1 class="layout-post-title">[科普] 《超级公式》公式全推导</h1>
+                          <div class="layout-post-meta">
+                            <div class="item">
+                               <a href="https://2005czq.github.io/tag/-rqiHNK5x/" class="post--keyword"
+                                data-title="公式" data-type="post_tag" data-term-id="39">公式</a>
+                              
+                            </div>
+                            <div class="item">
+                              <span>2020-07-22</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="layout-post-content">
+                          <div class="layout-post-item">
+                            
+                            <p class="with-img"><img src="https://cdn.pixabay.com/photo/2019/12/21/20/44/math-work-4711302_960_720.jpg"
+                                class="attachment-full size-full wp-post-image" alt="[科普] 《超级公式》公式全推导" /></p>
+                            
+                            <p>这里是《超级公式》里所有公式的推导。</p>
 <!--more-->
 <p>由于鄙人能力有限，所以有一些公式还是不懂。<br>
 不过我会持续更新的！另外你可以在这里看到我<s>咕咕咕了多久</s>最后更新是什么时候。<br>
@@ -324,75 +350,163 @@ M1001 80H400000v40H1013z'/></svg></span></span></span><span class="vlist-s">​<
 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mo>=</mo><mi mathvariant="normal">光</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">速</mi><mi mathvariant="normal">度</mi></mrow><annotation encoding="application/x-tex">c=光的速度</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">光</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">速</span><span class="mord cjk_fallback">度</span></span></span></span></p>
 </blockquote>
 
+                          </div>
+                        </div>
+                        <div class="layout-post-social">
+                          <div class="item reader">
+                            <div id="/post/how_to_get_the_perfect_sausage/" class="leancloud-visitors view"
+                              data-flag-title="[科普] 《超级公式》公式全推导">
+                              <span class="post-meta-item-text">阅读 </span>
+                              <span class="leancloud-visitors-count"></span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="layout-post-navigation">
+                          <div class="navigation-list">
+                            
+                            <div class="post-card row">
+                              
+                              <div class="card-content col-8 col-md-9">
+                                <div class="card-body">
+                                  <div class="header">
+                                    <a href="https://2005czq.github.io/post/2019to2020_down_finalexam/" class="title">
+                                      <h4>[生活] 2019-2020学年下学期期末考试游记</h4>
+                                    </a>
+                                  </div>
+                                  <div class="inner d-none d-sm-block">
+                                    <div class="abstract">
+                                      <p>看起来这是“游记”，其实就是一篇记录整个期末考试全过程的文章。</p>
+<p>由于没有写日记的习惯，所以好像都忘得差不多了。</p>
+
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card-footer">
+                                  <div class="item"><span>下一篇</span></div>
+                                  <div class="item">2020-07-20</div>
+                                </div>
+                              </div>
+                              <div class="card-thumb col-4 col-md-3">
+                                <div class="thumb">
+                                  <a href="https://2005czq.github.io/post/2019to2020_down_finalexam/"
+                                    style="background-image: url('https://cdn.pixabay.com/photo/2017/07/20/03/53/homework-2521144_960_720.jpg');"></a>
+                                </div>
+                              </div>
+                              
+                            </div>
+                            
+                          </div>
+                        </div>
+
+                        <div class="layout-comments"></div>
+                        
+                      </div>
+                    </div>
+
+                    <div class="col-12 col-lg-2 d-none d-lg-block">
+                      <div class="layout-post-sidebar">
+                        <div class="layout-sidebar-item">
+                          <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E6%89%80%E6%9C%89%E4%BD%A0%E6%88%96%E8%AE%B8%E4%BC%9A%E7%94%A8%E5%88%B0%E7%9A%84%E5%9B%BE%E5%BD%A2%E5%92%8C%E5%87%A0%E4%BD%95%E4%BD%93%E5%85%AC%E5%BC%8F">所有你或许会用到的图形和几何体公式</a>
+<ul>
+<li><a href="#%E9%95%BF%E6%96%B9%E5%BD%A2%E9%9D%A2%E7%A7%AF"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">长</mi><mi mathvariant="normal">方</mi><mi mathvariant="normal">形</mi><mi mathvariant="normal">面</mi><mi mathvariant="normal">积</mi></mrow><annotation encoding="application/x-tex">长方形面积</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">长</span><span class="mord cjk_fallback">方</span><span class="mord cjk_fallback">形</span><span class="mord cjk_fallback">面</span><span class="mord cjk_fallback">积</span></span></span></span></a></li>
+<li><a href="#%E9%95%BF%E6%96%B9%E5%BD%A2%E5%91%A8%E9%95%BF"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">长</mi><mi mathvariant="normal">方</mi><mi mathvariant="normal">形</mi><mi mathvariant="normal">周</mi><mi mathvariant="normal">长</mi></mrow><annotation encoding="application/x-tex">长方形周长</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">长</span><span class="mord cjk_fallback">方</span><span class="mord cjk_fallback">形</span><span class="mord cjk_fallback">周</span><span class="mord cjk_fallback">长</span></span></span></span></a></li>
+<li><a href="#%E9%95%BF%E6%96%B9%E5%BD%A2%E7%9A%84%E5%AF%B9%E8%A7%92%E7%BA%BF"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">长</mi><mi mathvariant="normal">方</mi><mi mathvariant="normal">形</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">对</mi><mi mathvariant="normal">角</mi><mi mathvariant="normal">线</mi></mrow><annotation encoding="application/x-tex">长方形的对角线</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">长</span><span class="mord cjk_fallback">方</span><span class="mord cjk_fallback">形</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">对</span><span class="mord cjk_fallback">角</span><span class="mord cjk_fallback">线</span></span></span></span></a></li>
+<li><a href="#%E5%9C%86%E7%9A%84%E9%9D%A2%E7%A7%AF"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">圆</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">面</mi><mi mathvariant="normal">积</mi></mrow><annotation encoding="application/x-tex">圆的面积</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">圆</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">面</span><span class="mord cjk_fallback">积</span></span></span></span></a></li>
+</ul>
+</li>
+<li><a href="#%E6%95%B0%E5%AD%97%E6%AF%94%E8%90%A8%E7%A2%8E%E7%89%87%E5%92%8C%E5%A4%96%E6%98%9F%E4%BA%BA%E7%BF%BB%E8%AF%91">数字，比萨碎片和外星人翻译</a>
+<ul>
+<li><a href="#%E4%B8%89%E8%A7%92%E5%BD%A2%E6%95%B0"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">三</mi><mi mathvariant="normal">角</mi><mi mathvariant="normal">形</mi><mi mathvariant="normal">数</mi></mrow><annotation encoding="application/x-tex">三角形数</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">三</span><span class="mord cjk_fallback">角</span><span class="mord cjk_fallback">形</span><span class="mord cjk_fallback">数</span></span></span></span></a></li>
+<li><a href="#%E5%9B%9B%E9%9D%A2%E4%BD%93%E6%95%B0"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">四</mi><mi mathvariant="normal">面</mi><mi mathvariant="normal">体</mi><mi mathvariant="normal">数</mi></mrow><annotation encoding="application/x-tex">四面体数</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">四</span><span class="mord cjk_fallback">面</span><span class="mord cjk_fallback">体</span><span class="mord cjk_fallback">数</span></span></span></span></a></li>
+<li><a href="#%E4%B8%AD%E5%BF%83%E5%85%AD%E8%BE%B9%E5%BD%A2%E6%95%B0"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">中</mi><mi mathvariant="normal">心</mi><mi mathvariant="normal">六</mi><mi mathvariant="normal">边</mi><mi mathvariant="normal">形</mi><mi mathvariant="normal">数</mi></mrow><annotation encoding="application/x-tex">中心六边形数</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">中</span><span class="mord cjk_fallback">心</span><span class="mord cjk_fallback">六</span><span class="mord cjk_fallback">边</span><span class="mord cjk_fallback">形</span><span class="mord cjk_fallback">数</span></span></span></span></a></li>
+<li><a href="#%E4%BA%94%E8%BE%B9%E5%BD%A2%E6%95%B0"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">五</mi><mi mathvariant="normal">边</mi><mi mathvariant="normal">形</mi><mi mathvariant="normal">数</mi></mrow><annotation encoding="application/x-tex">五边形数</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">五</span><span class="mord cjk_fallback">边</span><span class="mord cjk_fallback">形</span><span class="mord cjk_fallback">数</span></span></span></span></a></li>
+<li><a href="#%E6%AD%A3%E6%96%B9%E5%BD%A2%E6%95%B0"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">正</mi><mi mathvariant="normal">方</mi><mi mathvariant="normal">形</mi><mi mathvariant="normal">数</mi></mrow><annotation encoding="application/x-tex">正方形数</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">正</span><span class="mord cjk_fallback">方</span><span class="mord cjk_fallback">形</span><span class="mord cjk_fallback">数</span></span></span></span></a></li>
+<li><a href="#%E5%9B%9B%E6%A3%B1%E9%94%A5%E6%95%B0"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">四</mi><mi mathvariant="normal">棱</mi><mi mathvariant="normal">锥</mi><mi mathvariant="normal">数</mi></mrow><annotation encoding="application/x-tex">四棱锥数</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">四</span><span class="mord cjk_fallback">棱</span><span class="mord cjk_fallback">锥</span><span class="mord cjk_fallback">数</span></span></span></span></a></li>
+<li><a href="#n2t_nt_n-1"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup><mo>=</mo><msub><mi>T</mi><mi>n</mi></msub><mo>+</mo><msub><mi>T</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">n^2=T_n+T_{n-1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.891661em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.301108em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span></span></span></span></a></li>
+<li><a href="#%E9%95%BF%E6%96%B9%E5%BD%A2%E4%B8%8A%E9%95%BF%E6%96%B9%E5%BD%A2%E5%92%8C%E6%AD%A3%E6%96%B9%E5%BD%A2%E7%9A%84%E6%80%BB%E6%95%B0"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">长</mi><mi mathvariant="normal">方</mi><mi mathvariant="normal">形</mi><mi mathvariant="normal">上</mi><mi mathvariant="normal">长</mi><mi mathvariant="normal">方</mi><mi mathvariant="normal">形</mi><mi mathvariant="normal">和</mi><mi mathvariant="normal">正</mi><mi mathvariant="normal">方</mi><mi mathvariant="normal">形</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">总</mi><mi mathvariant="normal">数</mi></mrow><annotation encoding="application/x-tex">长方形上长方形和正方形的总数</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">长</span><span class="mord cjk_fallback">方</span><span class="mord cjk_fallback">形</span><span class="mord cjk_fallback">上</span><span class="mord cjk_fallback">长</span><span class="mord cjk_fallback">方</span><span class="mord cjk_fallback">形</span><span class="mord cjk_fallback">和</span><span class="mord cjk_fallback">正</span><span class="mord cjk_fallback">方</span><span class="mord cjk_fallback">形</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">总</span><span class="mord cjk_fallback">数</span></span></span></span></a></li>
+<li><a href="#%E7%BF%BB%E8%AF%91%E7%9A%84%E6%95%B0%E9%87%8F"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">翻</mi><mi mathvariant="normal">译</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">数</mi><mi mathvariant="normal">量</mi></mrow><annotation encoding="application/x-tex">翻译的数量</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">翻</span><span class="mord cjk_fallback">译</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">数</span><span class="mord cjk_fallback">量</span></span></span></span></a></li>
+<li><a href="#%E5%9C%86%E5%BD%A2%E6%AF%94%E8%90%A8"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">圆</mi><mi mathvariant="normal">形</mi><mi mathvariant="normal">比</mi><mi mathvariant="normal">萨</mi></mrow><annotation encoding="application/x-tex">圆形比萨</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">圆</span><span class="mord cjk_fallback">形</span><span class="mord cjk_fallback">比</span><span class="mord cjk_fallback">萨</span></span></span></span></a></li>
+<li><a href="#%E6%96%B0%E6%9C%88%E5%BD%A2"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">新</mi><mi mathvariant="normal">月</mi><mi mathvariant="normal">形</mi></mrow><annotation encoding="application/x-tex">新月形</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">新</span><span class="mord cjk_fallback">月</span><span class="mord cjk_fallback">形</span></span></span></span></a></li>
+<li><a href="#%E5%A5%B6%E9%85%AA"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">奶</mi><mi mathvariant="normal">酪</mi></mrow><annotation encoding="application/x-tex">奶酪</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">奶</span><span class="mord cjk_fallback">酪</span></span></span></span></a></li>
+</ul>
+</li>
+<li><a href="#%E5%9C%A8%E8%BF%90%E5%8A%A8%E8%BF%87%E7%A8%8B%E4%B8%AD">在运动过程中</a>
+<ul>
+<li><a href="#%E8%B7%9D%E7%A6%BB%E9%80%9F%E5%BA%A6times%E6%97%B6%E9%97%B4"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">距</mi><mi mathvariant="normal">离</mi><mo>=</mo><mi mathvariant="normal">速</mi><mi mathvariant="normal">度</mi><mo>×</mo><mi mathvariant="normal">时</mi><mi mathvariant="normal">间</mi></mrow><annotation encoding="application/x-tex">距离=速度\times时间</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mord cjk_fallback">距</span><span class="mord cjk_fallback">离</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">速</span><span class="mord cjk_fallback">度</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">时</span><span class="mord cjk_fallback">间</span></span></span></span></a></li>
+<li><a href="#%E5%8A%A0%E9%80%9F%E5%BA%A6"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">加</mi><mi mathvariant="normal">速</mi><mi mathvariant="normal">度</mi></mrow><annotation encoding="application/x-tex">加速度</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">加</span><span class="mord cjk_fallback">速</span><span class="mord cjk_fallback">度</span></span></span></span></a></li>
+<li><a href="#%E6%9C%80%E7%BB%88%E9%80%9F%E5%BA%A6"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">最</mi><mi mathvariant="normal">终</mi><mi mathvariant="normal">速</mi><mi mathvariant="normal">度</mi></mrow><annotation encoding="application/x-tex">最终速度</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">最</span><span class="mord cjk_fallback">终</span><span class="mord cjk_fallback">速</span><span class="mord cjk_fallback">度</span></span></span></span></a></li>
+<li><a href="#%E6%9C%80%E7%BB%88%E5%89%8D%E8%BF%9B%E8%B7%9D%E7%A6%BB"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">最</mi><mi mathvariant="normal">终</mi><mi mathvariant="normal">前</mi><mi mathvariant="normal">进</mi><mi mathvariant="normal">距</mi><mi mathvariant="normal">离</mi></mrow><annotation encoding="application/x-tex">最终前进距离</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">最</span><span class="mord cjk_fallback">终</span><span class="mord cjk_fallback">前</span><span class="mord cjk_fallback">进</span><span class="mord cjk_fallback">距</span><span class="mord cjk_fallback">离</span></span></span></span></a></li>
+<li><a href="#%E8%8A%B1%E8%B4%B9%E6%97%B6%E9%97%B4"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">花</mi><mi mathvariant="normal">费</mi><mi mathvariant="normal">时</mi><mi mathvariant="normal">间</mi></mrow><annotation encoding="application/x-tex">花费时间</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">花</span><span class="mord cjk_fallback">费</span><span class="mord cjk_fallback">时</span><span class="mord cjk_fallback">间</span></span></span></span></a></li>
+<li><a href="#%E5%B7%B2%E6%9C%89%E9%80%9F%E5%BA%A6%E7%9A%84%E5%8A%A0%E9%80%9F%E5%BA%A6"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">已</mi><mi mathvariant="normal">有</mi><mi mathvariant="normal">速</mi><mi mathvariant="normal">度</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">加</mi><mi mathvariant="normal">速</mi><mi mathvariant="normal">度</mi></mrow><annotation encoding="application/x-tex">已有速度的加速度</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">已</span><span class="mord cjk_fallback">有</span><span class="mord cjk_fallback">速</span><span class="mord cjk_fallback">度</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">加</span><span class="mord cjk_fallback">速</span><span class="mord cjk_fallback">度</span></span></span></span></a></li>
+<li><a href="#%E5%8A%A0%E9%80%9F%E5%90%8E%E5%89%8D%E8%BF%9B%E8%B7%9D%E7%A6%BB"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">加</mi><mi mathvariant="normal">速</mi><mi mathvariant="normal">后</mi><mi mathvariant="normal">前</mi><mi mathvariant="normal">进</mi><mi mathvariant="normal">距</mi><mi mathvariant="normal">离</mi></mrow><annotation encoding="application/x-tex">加速后前进距离</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">加</span><span class="mord cjk_fallback">速</span><span class="mord cjk_fallback">后</span><span class="mord cjk_fallback">前</span><span class="mord cjk_fallback">进</span><span class="mord cjk_fallback">距</span><span class="mord cjk_fallback">离</span></span></span></span></a></li>
+<li><a href="#%E5%81%9C%E6%AD%A2%E7%9A%84%E6%97%B6%E9%97%B4"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">停</mi><mi mathvariant="normal">止</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">时</mi><mi mathvariant="normal">间</mi></mrow><annotation encoding="application/x-tex">停止的时间</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">停</span><span class="mord cjk_fallback">止</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">时</span><span class="mord cjk_fallback">间</span></span></span></span></a></li>
+<li><a href="#%E5%81%9C%E6%AD%A2%E7%9A%84%E8%B7%9D%E7%A6%BB"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">停</mi><mi mathvariant="normal">止</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">距</mi><mi mathvariant="normal">离</mi></mrow><annotation encoding="application/x-tex">停止的距离</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">停</span><span class="mord cjk_fallback">止</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">距</span><span class="mord cjk_fallback">离</span></span></span></span></a></li>
+<li><a href="#%E9%99%8D%E8%90%BD%E6%97%B6%E9%97%B4"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">降</mi><mi mathvariant="normal">落</mi><mi mathvariant="normal">时</mi><mi mathvariant="normal">间</mi></mrow><annotation encoding="application/x-tex">降落时间</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">降</span><span class="mord cjk_fallback">落</span><span class="mord cjk_fallback">时</span><span class="mord cjk_fallback">间</span></span></span></span></a></li>
+<li><a href="#%E6%9C%80%E5%A4%A7%E9%AB%98%E5%BA%A6"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">最</mi><mi mathvariant="normal">大</mi><mi mathvariant="normal">高</mi><mi mathvariant="normal">度</mi></mrow><annotation encoding="application/x-tex">最大高度</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">最</span><span class="mord cjk_fallback">大</span><span class="mord cjk_fallback">高</span><span class="mord cjk_fallback">度</span></span></span></span></a></li>
+<li><a href="#%E6%9C%80%E5%A4%A7%E9%AB%98%E5%BA%A6%E6%89%80%E7%94%A8%E6%97%B6%E9%97%B4"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">最</mi><mi mathvariant="normal">大</mi><mi mathvariant="normal">高</mi><mi mathvariant="normal">度</mi><mi mathvariant="normal">所</mi><mi mathvariant="normal">用</mi><mi mathvariant="normal">时</mi><mi mathvariant="normal">间</mi></mrow><annotation encoding="application/x-tex">最大高度所用时间</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">最</span><span class="mord cjk_fallback">大</span><span class="mord cjk_fallback">高</span><span class="mord cjk_fallback">度</span><span class="mord cjk_fallback">所</span><span class="mord cjk_fallback">用</span><span class="mord cjk_fallback">时</span><span class="mord cjk_fallback">间</span></span></span></span></a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%A0%E8%83%BD%E6%84%9F%E8%A7%89%E5%88%B0%E5%8A%9B%E5%90%97">你能感觉到力吗</a>
+<ul>
+<li><a href="#%E8%A1%8C%E6%98%9F%E7%9A%84%E9%80%9F%E5%BA%A6"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">行</mi><mi mathvariant="normal">星</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">速</mi><mi mathvariant="normal">度</mi></mrow><annotation encoding="application/x-tex">行星的速度</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">行</span><span class="mord cjk_fallback">星</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">速</span><span class="mord cjk_fallback">度</span></span></span></span></a></li>
+<li><a href="#%E4%B8%87%E6%9C%89%E5%BC%95%E5%8A%9B%E5%AE%9A%E5%BE%8B"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">万</mi><mi mathvariant="normal">有</mi><mi mathvariant="normal">引</mi><mi mathvariant="normal">力</mi><mi mathvariant="normal">定</mi><mi mathvariant="normal">律</mi></mrow><annotation encoding="application/x-tex">万有引力定律</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">万</span><span class="mord cjk_fallback">有</span><span class="mord cjk_fallback">引</span><span class="mord cjk_fallback">力</span><span class="mord cjk_fallback">定</span><span class="mord cjk_fallback">律</span></span></span></span></a></li>
+<li><a href="#%E7%89%9B%E9%A1%BF%E7%AC%AC%E4%BA%8C%E8%BF%90%E5%8A%A8%E5%AE%9A%E5%BE%8B"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">牛</mi><mi mathvariant="normal">顿</mi><mi mathvariant="normal">第</mi><mi mathvariant="normal">二</mi><mi mathvariant="normal">运</mi><mi mathvariant="normal">动</mi><mi mathvariant="normal">定</mi><mi mathvariant="normal">律</mi></mrow><annotation encoding="application/x-tex">牛顿第二运动定律</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">牛</span><span class="mord cjk_fallback">顿</span><span class="mord cjk_fallback">第</span><span class="mord cjk_fallback">二</span><span class="mord cjk_fallback">运</span><span class="mord cjk_fallback">动</span><span class="mord cjk_fallback">定</span><span class="mord cjk_fallback">律</span></span></span></span></a></li>
+<li><a href="#%E7%88%B1%E5%9B%A0%E6%96%AF%E5%9D%A6%E5%8A%9B%E7%9A%84%E5%85%AC%E5%BC%8F"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">爱</mi><mi mathvariant="normal">因</mi><mi mathvariant="normal">斯</mi><mi mathvariant="normal">坦</mi><mi mathvariant="normal">力</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">公</mi><mi mathvariant="normal">式</mi></mrow><annotation encoding="application/x-tex">爱因斯坦力的公式</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">爱</span><span class="mord cjk_fallback">因</span><span class="mord cjk_fallback">斯</span><span class="mord cjk_fallback">坦</span><span class="mord cjk_fallback">力</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">公</span><span class="mord cjk_fallback">式</span></span></span></span></a></li>
+<li><a href="#%E9%92%9F%E6%91%86"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">钟</mi><mi mathvariant="normal">摆</mi></mrow><annotation encoding="application/x-tex">钟摆</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">钟</span><span class="mord cjk_fallback">摆</span></span></span></span></a></li>
+<li><a href="#%E8%83%BD%E9%87%8F%E6%96%B9%E7%A8%8B"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">能</mi><mi mathvariant="normal">量</mi><mi mathvariant="normal">方</mi><mi mathvariant="normal">程</mi></mrow><annotation encoding="application/x-tex">能量方程</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">能</span><span class="mord cjk_fallback">量</span><span class="mord cjk_fallback">方</span><span class="mord cjk_fallback">程</span></span></span></span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
-        
-          <div class="next-post">
-            <a class="purple-link" href="https://2005czq.github.io/post/2019to2020_down_finalexam/">
-              <h3 class="post-title">
-                下一篇：[生活] 2019-2020学年下学期期末考试游记
-              </h3>
-            </a>
-          </div>
-          
       </div>
+    </div>
 
-      
-        
-          <div id="gitalk-container"></div>
-        
+    <div class="layout-totop d-none"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
 
-        
-      
+    	<div class="layout-footer">
 
-      <div class="site-footer">
-  <div class="slogan"><div class='colorful'>『若君欲见极好之世界 则令界先见极好之君』</div><br>
-<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
-<!--End-->
-<script>
-  fetch('https://v1.hitokoto.cn')
-    .then(function (res){
-      return res.json();
-    })
-    .then(function (data) {
-      var hitokoto = document.getElementById('hitokoto');
-      hitokoto.innerText ='『' + data.hitokoto + '』——「' + data.from + '」';
-    })
-    .catch(function (err) {
-      console.error(err);
-    })
-</script>
-<p id="hitokoto">载入一言ing...</p></div>
-  <div class="social-container">
-    
-      
-        <a href="https://github.com/2005czq" target="_blank">
-          <i class="fab fa-github"></i>
-        </a>
-      
-    
-      
-    
-      
-        <a href="https://weibo.com/2005czq" target="_blank">
-          <i class="fab fa-weibo"></i>
-        </a>
-      
-    
-      
-        <a href="https://www.zhihu.com/people/czq-king" target="_blank">
-          <i class="fab fa-zhihu"></i>
-        </a>
-      
-    
-      
-    
-  </div>
-  </span>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv"><i class="fa fa-user" aria-hidden="true"></i></span> </span><span id="busuanzi_value_site_uv"></span> | </span><span id="busuanzi_container_site_pv"><i class="fa fa-eye" aria-hidden="true"></i></span> </span><span id="busuanzi_value_site_pv"></span></span>
-<br>
+		<div class="container">
+			<div class="row justify-content-lg-center">
+				<div class="col-12 col-lg-9">
+					<div class="footer">
+						<div class="row">
+							<div class="col-12 col-md-9">
+								<div class="footer-copy">
+									
+									<span>© 2019-2020 |  </span>
+									<a href="https://2005czq.github.io" title="CZQ-King">CZQ-King</a>
+									<span class="px-2">⋅</span>
+									
+									<style>
+  .colorful{
+	background-image: linear-gradient(to bottom, #ED4264, #FFEDBC);
+	color: transparent;
+	-webkit-background-clip: text;
+  }
+</style>
+
+<div class='colorful'>『若君欲见极好之世界 则令界先见极好之君』</div>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv">访客<span id="busuanzi_value_site_pv"></span>人 | </span>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_uv">访问<span id="busuanzi_value_site_uv"></span>次</span>
+
 <span id="timeDate">载入天数ing...</span>
 <span id="times">载入时分秒...</span>
 <script>
@@ -409,53 +523,82 @@ M1001 80H400000v40H1013z'/></svg></span></span></span><span class="vlist-s">​<
         document.getElementById("timeDate").innerHTML = "本站已低调存活"+dnum+"天";
         document.getElementById("times").innerHTML=hnum+"小时"+mnum+"分"+snum+"秒";
     }
-
 setInterval("createtime()",250);
-
-</script>
-<br>© 2019-2020 | CZQ-King | <a class="rss" href="https://2005czq.github.io/atom.xml" target="_blank">RSS</a>
-</div>
-
-
-    </div>
-    <script type="application/javascript">
-
-hljs.initHighlightingOnLoad()
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
-
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(function (res){
+      return res.json();
+    })
+    .then(function (data) {
+      var hitokoto = document.getElementById('hitokoto');
+      hitokoto.innerText ='『' + data.hitokoto + '』——「' + data.from + '」';
+    })
+    .catch(function (err) {
+      console.error(err);
+    })
+</script>
+<p id="hitokoto">载入一言ing...</p>
+									<div class="footer-icp d-none d-sm-inline-block">
+										<span class="px-2">⋅</span>
+										
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3 d-none d-md-block">
+								<div class="footer-links">
+									
+									
+									
+									
+									<span class="footer-links-item">
+										<a href="https://github.com/2005czq" target="_blank">
+											<i class="fa fa-github" aria-hidden="true"></i>
+										</a>
+									</span>
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									<span class="footer-links-item">
+										<a href="https://wpa.qq.com/msgrd?v=3&amp;uin=3376299315" target="_blank">
+											<i class="fa fa-qq" aria-hidden="true"></i>
+										</a>
+									</span>
+									
+									
+									
+									<span class="footer-links-item">
+										<a href="https://weibo.com/2005czq" target="_blank">
+											<i class="fa fa-weibo" aria-hidden="true"></i>
+										</a>
+									</span>
+									
+									
+									
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
+	</div>
 
-  
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-    <script>
+	<script type="text/javascript" src='https://2005czq.github.io/media/scripts/main.js'></script>
+	
 
-      var gitalk = new Gitalk({
-        clientID: '1ef4a85c2ccf8c4d9f2d',
-        clientSecret: '0f28f7a02b9df85bc9fdf9f0614b6fbfdfd5cf95',
-        repo: '2005czq.github.io',
-        owner: '2005czq',
-        admin: ['2005czq'],
-        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-        distractionFreeMode: false  // Facebook-like distraction free mode
-      })
+  </div>
+</body>
 
-      gitalk.render('gitalk-container')
-
-    </script>
-  
-
-  
-
-
-
-
-  </body>
 </html>

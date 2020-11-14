@@ -2,8 +2,8 @@
 <html lang="zh-CN">
 
 <head>
-    <meta charset="UTF-8" />
-<title>黑洞 - CZQ-King</title>
+	<meta charset="UTF-8" />
+<title>CZQ-King</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -20,10 +20,8 @@
 </head>
 
 <body>
-
-    <div class="layout theme-dark">
-
-        <div class="layout-header">
+	<div class="layout theme-dark">
+		<div class="layout-header">
 
 	<div class="layout-header-main">
 		<div class="container">
@@ -103,8 +101,7 @@
 	</div>
 
 </div>
-
-        <div class="layout-collapse d-md-none">
+		<div class="layout-collapse d-md-none">
 	<div class="layout-collapse-main">
 		<ul class="layout-collapse-list">
 			
@@ -121,120 +118,40 @@
 	</div>
 </div>
 
-        
-
-<div class="layout-nav" style="background-image: url('https://cdn.pixabay.com/photo/2019/03/31/07/37/black-hole-4092609_960_720.jpg')">
-  <div class="container">
-    <div class="row justify-content-lg-center">
-      <div class="col-12 col-lg-9">
-        <div class="nav-content">
-          <h1>黑洞</h1>
-          <div class="sub-title"># 标签</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
+		<div class="layout-content">
+			<div class="layout-content-main">
+				<div class="container">
+					<div class="row justify-content-lg-center">
+						<div class="col-12 col-lg-9">
+							<div class="layout-archive">
 
 
-        <div class="layout-content">
-  <div class="layout-content-main">
-    <div class="container">
-      <div class="row justify-content-lg-center">
-        <div class="col-12 col-lg-9">
-          <div class="card-list">
-            
-            
-            <article class="card">
-              <div class="card-item row">
-                
-                <div class="card-content col-8 col-lg-9">
-                  <div class="card-body">
-                    <div class="header">
-                      <a class="title" href="https://2005czq.github.io/post/black_hole_four/">
-                        <h3>[科普] 数字黑洞4循环</h3>
-                      </a>
-                    </div>
-                    <div class="inner d-none d-sm-block">
-                      <div class="abstract">
-                        <p>前几天看 <a href="http://www.matrix67.com/blog/archives/4520">Matrix67 的一篇文章</a>，看到这么一个有意思的东西：</p>
-<blockquote>
-<p>不断取数字英文表达的字符数，最后总会得到数字 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span>。</p>
-</blockquote>
+								<div class="card">
+									<div class="card-header">
+										<div class="header-content">
+											<div class="title">友情链接</div>
+										</div>
 
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-footer">
-                    <div class="item">
-                      
-                      <a href="https://2005czq.github.io/tag/qIGQhiI-8/" class="tag" data-title="黑洞">
-                        黑洞
-                      </a>
-                      
-                    </div>
-                    <div class="item">2019-08-29</div>
-                  </div>
-                </div>
-                <div class="card-thumb col-4 col-lg-3">
-                  <div class="thumb">
-                    <a href="https://2005czq.github.io/post/black_hole_four/" style="background-image: url('https://cdn.pixabay.com/photo/2019/03/31/07/37/black-hole-4092609_960_720.jpg')"></a>
-                  </div>
-                </div>
-                
-              </div>
-            </article>
-            
-            
-          </div>
+									</div>
+									<div class="card-body">
+										
+										
+										
+									</div>
+								</div>
 
-          
+							</div>
 
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+							
 
+						</div>
+					</div>
 
-<script type="text/javascript">
-  //点击加载更多
-  jQuery(document).ready(function ($) {
-    //点击下一页的链接(即那个a标签)
-    $(' .btn-paginator').click(function () {
-      $this = $(this);
-      $this.addClass('loading').text('正在加载'); //给a标签加载一个loading的class属性，用来添加加载效果
-      var href = $this.attr('href'); //获取下一页的链接地址
-      if (href != undefined) { //如果地址存在
-        $.ajax({ //发起ajax请求
-          url: href,
-          //请求的地址就是下一页的链接
-          type: 'get',
-          //请求类型是get
-          error: function (request) {
-            //如果发生错误怎么处理
-          },
-          success: function (data) { //请求成功
-            $this.removeClass('loading').text('加载更多'); //移除loading属性
-            var $res = $(data).find('.card'); //从数据中挑出文章数据，请根据实际情况更改
-            $('.card-list').append($res.fadeIn(
-              500)); //将数据加载加进posts-loop的标签中。
-            var newhref = $(data).find('.btn-paginator').attr('href'); //找出新的下一页链接
-            if (newhref != undefined) {
-              $('.btn-paginator').attr('href', newhref);
-            } else {
-              $('.btn-paginator').remove(); //如果没有下一页了，隐藏
-            }
-          }
-        });
-      }
-      return false;
-    });
-  });
-</script>
+				</div>
+			</div>
+		</div>
 
-        	<div class="layout-footer">
+			<div class="layout-footer">
 
 		<div class="container">
 			<div class="row justify-content-lg-center">
@@ -353,7 +270,7 @@ setInterval("createtime()",250);
 
 	<script type="text/javascript" src='https://2005czq.github.io/media/scripts/main.js'></script>
 	
-    </div>
+	</div>
 </body>
 
 </html>

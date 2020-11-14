@@ -1,182 +1,225 @@
-
 <!DOCTYPE html>
-<html>
-  <head>
-    
-<meta charset="utf-8" >
+<html lang="zh-CN">
 
-<title>Secret Page | CZQ-King</title>
-<meta name="description" content="&lt;div class=&#39;colorful&#39;&gt;『若君欲见极好之世界 则令界先见极好之君』&lt;/div&gt;&lt;br&gt;
-&lt;script src=&#34;https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js&#34;&gt;&lt;/script&gt;
-&lt;!--End--&gt;
-&lt;script&gt;
-  fetch(&#39;https://v1.hitokoto.cn&#39;)
-    .then(function (res){
-      return res.json();
-    })
-    .then(function (data) {
-      var hitokoto = document.getElementById(&#39;hitokoto&#39;);
-      hitokoto.innerText =&#39;『&#39; + data.hitokoto + &#39;』——「&#39; + data.from + &#39;」&#39;;
-    })
-    .catch(function (err) {
-      console.error(err);
-    })
-&lt;/script&gt;
-&lt;p id=&#34;hitokoto&#34;&gt;载入一言ing...&lt;/p&gt;">
-
+<head>
+  <meta charset="UTF-8" />
+<title>Secret Page - CZQ-King</title>
+<meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://2005czq.github.io/favicon.ico?v=1604105324807">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://2005czq.github.io/styles/main.css">
+<link type='text/css' rel='stylesheet' href='https://2005czq.github.io/styles/main.css' media='screen' />
+<link type="text/css" rel="stylesheet" href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css">
+<link type="text/css" rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script type="text/javascript" src='https://2005czq.github.io/media/scripts/jquery.js'></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</head>
+
+<body>
+  <div class="layout theme-dark">
+    <div class="layout-header">
+
+	<div class="layout-header-main">
+		<div class="container">
+			<div class="row justify-content-lg-center">
+				<div class="col-12 col-lg-9">
+
+					<div class="navbar">
+
+						<div class="logo">
+							<a href="https://2005czq.github.io">
+								<img class="logo"
+									src="https://2005czq.github.io/media/images/site_avatar.png?v=1605332853050"
+									alt="">
+							</a>
+						</div>
+
+						<div class="menu d-md-inline-block d-none">
+							<ul class="layout-navigation-list">
+								
+								<li class="layout-navigation-item"><a title="首页"
+										href="/">首页</a>
+								</li>
+								
+								<li class="layout-navigation-item"><a title="归档"
+										href="/archives">归档</a>
+								</li>
+								
+								<li class="layout-navigation-item"><a title="标签"
+										href="/tags">标签</a>
+								</li>
+								
+								<li class="layout-navigation-item"><a title="关于"
+										href="/post/about">关于</a>
+								</li>
+								
+							</ul>
+						</div>
+
+						<div class="item d-md-inline-block d-none">
+							<div class="search-icon">
+								<i class="fa fa-search" aria-hidden="true"></i>
+							</div>
+						</div>
 
 
-  
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
-  
 
-  
+						<div class="d-md-inline-block d-none">
+							<div class="search-lightbox">
+								<div class="search-body">
+
+									<form id="gridea-search-form" data-update="1605332853050" action="/search/" class="search-form">
+										<input type="text" name="q" id="s" value="" class="search-field" placeholder="请输入搜索关键词" aria-label="请输入搜索关键词" required="">
+										<button type="submit" class="submit" aria-label="Submit">
+											<i class="fa fa-search" aria-hidden="true"></i>
+										</button>
+									</form>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="nav d-md-none d-inline-block">
+							<div class="trigger">
+								<i class="fa fa-bars layout-btn-toggle" aria-hidden="true"></i>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
 
 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
 
+		</div>
+	</div>
 
-  </head>
-  <body>
-    <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://2005czq.github.io">
-        <img class="avatar" src="https://2005czq.github.io/images/avatar.png?v=1604105324807" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://2005czq.github.io">
-        <h1 class="site-title">CZQ-King</h1>
-      </a>
-    </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
-  </div>
+</div>
+    <div class="layout-collapse d-md-none">
+	<div class="layout-collapse-main">
+		<ul class="layout-collapse-list">
+			
+			<li class="layout-collapse-item"><a title="首页" href="/">首页</a></li>
+			
+			<li class="layout-collapse-item"><a title="归档" href="/archives">归档</a></li>
+			
+			<li class="layout-collapse-item"><a title="标签" href="/tags">标签</a></li>
+			
+			<li class="layout-collapse-item"><a title="关于" href="/post/about">关于</a></li>
+			
+
+		</ul>
+	</div>
 </div>
 
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
-      
-        
-          <a href="/" class="menu purple-link">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="menu purple-link">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="menu purple-link">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="menu purple-link">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-</transition>
+    <div class="layout-content">
+      <div class="layout-content-main">
+        <div class="container">
+          <div class="row justify-content-lg-center">
+            <div class="col-12 col-lg-9">
+              <div class="layout-post">
+                <div class="layout-post-body">
+                  <div class="row">
 
-
-      <div class="content-container">
-        <div class="post-detail">
-          
-          <h2 class="post-title">Secret Page</h2>
-          <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2020-03-16</span>
-            
-          </div>
-          <div class="post-content">
-            <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="red"><mrow><mi mathvariant="monospace">T</mi><mi mathvariant="monospace">h</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">s</mi><mtext> </mtext><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">s</mi><mtext> </mtext><mi mathvariant="monospace">a</mi><mtext> </mtext><mi mathvariant="monospace">s</mi><mi mathvariant="monospace">e</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">r</mi><mi mathvariant="monospace">e</mi><mi mathvariant="monospace">t</mi><mtext> </mtext><mi mathvariant="monospace">p</mi><mi mathvariant="monospace">a</mi><mi mathvariant="monospace">g</mi><mi mathvariant="monospace">e</mi><mi mathvariant="monospace">.</mi></mrow></mstyle></mrow><annotation encoding="application/x-tex">\color{red}{\mathtt{This\ is\ a\ secret\ page.}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord" style="color:red;"><span class="mord" style="color:red;"><span class="mord mathtt" style="color:red;">T</span><span class="mord mathtt" style="color:red;">h</span><span class="mord mathtt" style="color:red;">i</span><span class="mord mathtt" style="color:red;">s</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">i</span><span class="mord mathtt" style="color:red;">s</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">a</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">s</span><span class="mord mathtt" style="color:red;">e</span><span class="mord mathtt" style="color:red;">c</span><span class="mord mathtt" style="color:red;">r</span><span class="mord mathtt" style="color:red;">e</span><span class="mord mathtt" style="color:red;">t</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">p</span><span class="mord mathtt" style="color:red;">a</span><span class="mord mathtt" style="color:red;">g</span><span class="mord mathtt" style="color:red;">e</span><span class="mord mathtt" style="color:red;">.</span></span></span></span></span></span><br>
+                    <div class="col-12 col-lg-10">
+                      <div class="layout-post-main m-right m-md-right">
+                        <div class="layout-post-header">
+                          <h1 class="layout-post-title">Secret Page</h1>
+                          <div class="layout-post-meta">
+                            <div class="item">
+                              
+                            </div>
+                            <div class="item">
+                              <span>2020-03-16</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="layout-post-content">
+                          <div class="layout-post-item">
+                            
+                            <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="red"><mrow><mi mathvariant="monospace">T</mi><mi mathvariant="monospace">h</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">s</mi><mtext> </mtext><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">s</mi><mtext> </mtext><mi mathvariant="monospace">a</mi><mtext> </mtext><mi mathvariant="monospace">s</mi><mi mathvariant="monospace">e</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">r</mi><mi mathvariant="monospace">e</mi><mi mathvariant="monospace">t</mi><mtext> </mtext><mi mathvariant="monospace">p</mi><mi mathvariant="monospace">a</mi><mi mathvariant="monospace">g</mi><mi mathvariant="monospace">e</mi><mi mathvariant="monospace">.</mi></mrow></mstyle></mrow><annotation encoding="application/x-tex">\color{red}{\mathtt{This\ is\ a\ secret\ page.}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord" style="color:red;"><span class="mord" style="color:red;"><span class="mord mathtt" style="color:red;">T</span><span class="mord mathtt" style="color:red;">h</span><span class="mord mathtt" style="color:red;">i</span><span class="mord mathtt" style="color:red;">s</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">i</span><span class="mord mathtt" style="color:red;">s</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">a</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">s</span><span class="mord mathtt" style="color:red;">e</span><span class="mord mathtt" style="color:red;">c</span><span class="mord mathtt" style="color:red;">r</span><span class="mord mathtt" style="color:red;">e</span><span class="mord mathtt" style="color:red;">t</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">p</span><span class="mord mathtt" style="color:red;">a</span><span class="mord mathtt" style="color:red;">g</span><span class="mord mathtt" style="color:red;">e</span><span class="mord mathtt" style="color:red;">.</span></span></span></span></span></span><br>
 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="red"><mrow><mi mathvariant="monospace">I</mi><mtext> </mtext><mi mathvariant="monospace">k</mi><mi mathvariant="monospace">n</mi><mi mathvariant="monospace">o</mi><mi mathvariant="monospace">w</mi><mtext> </mtext><mi mathvariant="monospace">w</mi><mi mathvariant="monospace">h</mi><mi mathvariant="monospace">a</mi><mi mathvariant="monospace">t</mi><mtext> </mtext><mi mathvariant="monospace">y</mi><mi mathvariant="monospace">o</mi><mi mathvariant="monospace">u</mi><mtext> </mtext><mi mathvariant="monospace">w</mi><mi mathvariant="monospace">a</mi><mi mathvariant="monospace">n</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">.</mi></mrow></mstyle></mrow><annotation encoding="application/x-tex">\color{red}{\mathtt{I\ know\ what\ you\ want.}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord" style="color:red;"><span class="mord" style="color:red;"><span class="mord mathtt" style="color:red;">I</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">k</span><span class="mord mathtt" style="color:red;">n</span><span class="mord mathtt" style="color:red;">o</span><span class="mord mathtt" style="color:red;">w</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">w</span><span class="mord mathtt" style="color:red;">h</span><span class="mord mathtt" style="color:red;">a</span><span class="mord mathtt" style="color:red;">t</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">y</span><span class="mord mathtt" style="color:red;">o</span><span class="mord mathtt" style="color:red;">u</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">w</span><span class="mord mathtt" style="color:red;">a</span><span class="mord mathtt" style="color:red;">n</span><span class="mord mathtt" style="color:red;">t</span><span class="mord mathtt" style="color:red;">.</span></span></span></span></span></span><br>
 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="red"><mrow><mi mathvariant="monospace">I</mi><mtext> </mtext><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">h</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">n</mi><mi mathvariant="monospace">k</mi><mtext> </mtext><mi mathvariant="monospace">y</mi><mi mathvariant="monospace">o</mi><msup><mi mathvariant="monospace">u</mi><mo mathvariant="monospace">′</mo></msup><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">l</mi><mtext> </mtext><mi mathvariant="monospace">n</mi><mi mathvariant="monospace">e</mi><mi mathvariant="monospace">e</mi><mi mathvariant="monospace">d</mi><mtext> </mtext><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">.</mi></mrow></mstyle></mrow><annotation encoding="application/x-tex">\color{red}{\mathtt{I\ think\ you&#x27;ll\ need\ it.}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0129970000000001em;vertical-align:-0.22222em;"></span><span class="mord" style="color:red;"><span class="mord" style="color:red;"><span class="mord mathtt" style="color:red;">I</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">t</span><span class="mord mathtt" style="color:red;">h</span><span class="mord mathtt" style="color:red;">i</span><span class="mord mathtt" style="color:red;">n</span><span class="mord mathtt" style="color:red;">k</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">y</span><span class="mord mathtt" style="color:red;">o</span><span class="mord" style="color:red;"><span class="mord mathtt" style="color:red;">u</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7907770000000001em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style="color:red;"><span class="mord mtight" style="color:red;"><span class="mord mathtt mtight" style="color:red;">′</span></span></span></span></span></span></span></span></span><span class="mord mathtt" style="color:red;">l</span><span class="mord mathtt" style="color:red;">l</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">n</span><span class="mord mathtt" style="color:red;">e</span><span class="mord mathtt" style="color:red;">e</span><span class="mord mathtt" style="color:red;">d</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">i</span><span class="mord mathtt" style="color:red;">t</span><span class="mord mathtt" style="color:red;">.</span></span></span></span></span></span><br>
 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="red"><mrow><mi mathvariant="monospace">I</mi><mtext> </mtext><mi mathvariant="monospace">h</mi><mi mathvariant="monospace">o</mi><mi mathvariant="monospace">p</mi><mi mathvariant="monospace">e</mi><mtext> </mtext><mi mathvariant="monospace">I</mi><mtext> </mtext><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">a</mi><mi mathvariant="monospace">n</mi><mi mathvariant="monospace">.</mi><mi mathvariant="monospace">.</mi><mi mathvariant="monospace">.</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">e</mi><mi mathvariant="monospace">a</mi><mi mathvariant="monospace">v</mi><mi mathvariant="monospace">e</mi><mtext> </mtext><mi mathvariant="monospace">s</mi><mi mathvariant="monospace">o</mi><mi mathvariant="monospace">m</mi><mi mathvariant="monospace">e</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">h</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">n</mi><mi mathvariant="monospace">g</mi><mi mathvariant="monospace">.</mi><mi mathvariant="monospace">.</mi><mi mathvariant="monospace">.</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">o</mi><mi mathvariant="monospace">r</mi><mtext> </mtext><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">h</mi><mi mathvariant="monospace">e</mi><mtext> </mtext><mi mathvariant="monospace">w</mi><mi mathvariant="monospace">o</mi><mi mathvariant="monospace">r</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">d</mi><mi mathvariant="monospace">.</mi></mrow></mstyle></mrow><annotation encoding="application/x-tex">\color{red}{\mathtt{I\ hope\ I\ can...leave\ something...for\ the\ world.}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord" style="color:red;"><span class="mord" style="color:red;"><span class="mord mathtt" style="color:red;">I</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">h</span><span class="mord mathtt" style="color:red;">o</span><span class="mord mathtt" style="color:red;">p</span><span class="mord mathtt" style="color:red;">e</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">I</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">c</span><span class="mord mathtt" style="color:red;">a</span><span class="mord mathtt" style="color:red;">n</span><span class="mord mathtt" style="color:red;">.</span><span class="mord mathtt" style="color:red;">.</span><span class="mord mathtt" style="color:red;">.</span><span class="mord mathtt" style="color:red;">l</span><span class="mord mathtt" style="color:red;">e</span><span class="mord mathtt" style="color:red;">a</span><span class="mord mathtt" style="color:red;">v</span><span class="mord mathtt" style="color:red;">e</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">s</span><span class="mord mathtt" style="color:red;">o</span><span class="mord mathtt" style="color:red;">m</span><span class="mord mathtt" style="color:red;">e</span><span class="mord mathtt" style="color:red;">t</span><span class="mord mathtt" style="color:red;">h</span><span class="mord mathtt" style="color:red;">i</span><span class="mord mathtt" style="color:red;">n</span><span class="mord mathtt" style="color:red;">g</span><span class="mord mathtt" style="color:red;">.</span><span class="mord mathtt" style="color:red;">.</span><span class="mord mathtt" style="color:red;">.</span><span class="mord mathtt" style="color:red;">f</span><span class="mord mathtt" style="color:red;">o</span><span class="mord mathtt" style="color:red;">r</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">t</span><span class="mord mathtt" style="color:red;">h</span><span class="mord mathtt" style="color:red;">e</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">w</span><span class="mord mathtt" style="color:red;">o</span><span class="mord mathtt" style="color:red;">r</span><span class="mord mathtt" style="color:red;">l</span><span class="mord mathtt" style="color:red;">d</span><span class="mord mathtt" style="color:red;">.</span></span></span></span></span></span><br>
 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="red"><mrow><mi mathvariant="monospace">I</mi><mi mathvariant="monospace">f</mi><mtext> </mtext><mi mathvariant="monospace">y</mi><mi mathvariant="monospace">o</mi><mi mathvariant="monospace">u</mi><mtext> </mtext><mi mathvariant="monospace">w</mi><mi mathvariant="monospace">a</mi><mi mathvariant="monospace">n</mi><mi mathvariant="monospace">t</mi><mtext> </mtext><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">o</mi><mtext> </mtext><mi mathvariant="monospace">g</mi><mi mathvariant="monospace">o</mi><mtext> </mtext><mi mathvariant="monospace">b</mi><mi mathvariant="monospace">a</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">k</mi><mtext> </mtext><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">o</mi><mtext> </mtext><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">h</mi><mi mathvariant="monospace">e</mi><mtext> </mtext><mi mathvariant="monospace">p</mi><mi mathvariant="monospace">a</mi><mi mathvariant="monospace">s</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">.</mi><mi mathvariant="monospace">.</mi><mi mathvariant="monospace">.</mi></mrow></mstyle></mrow><annotation encoding="application/x-tex">\color{red}{\mathtt{If\ you\ want\ to\ go\ back\ to\ the\ past...}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord" style="color:red;"><span class="mord" style="color:red;"><span class="mord mathtt" style="color:red;">I</span><span class="mord mathtt" style="color:red;">f</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">y</span><span class="mord mathtt" style="color:red;">o</span><span class="mord mathtt" style="color:red;">u</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">w</span><span class="mord mathtt" style="color:red;">a</span><span class="mord mathtt" style="color:red;">n</span><span class="mord mathtt" style="color:red;">t</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">t</span><span class="mord mathtt" style="color:red;">o</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">g</span><span class="mord mathtt" style="color:red;">o</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">b</span><span class="mord mathtt" style="color:red;">a</span><span class="mord mathtt" style="color:red;">c</span><span class="mord mathtt" style="color:red;">k</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">t</span><span class="mord mathtt" style="color:red;">o</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">t</span><span class="mord mathtt" style="color:red;">h</span><span class="mord mathtt" style="color:red;">e</span><span class="mspace" style="color:red;"><span style="color:red;"> </span></span><span class="mord mathtt" style="color:red;">p</span><span class="mord mathtt" style="color:red;">a</span><span class="mord mathtt" style="color:red;">s</span><span class="mord mathtt" style="color:red;">t</span><span class="mord mathtt" style="color:red;">.</span><span class="mord mathtt" style="color:red;">.</span><span class="mord mathtt" style="color:red;">.</span></span></span></span></span></span></p>
 <p><a href="https://www.tiki-toki.com/timeline/entry/1410441/-/"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><menclose mathbackground="red"><mtext>→CLICK ME←</mtext></menclose></mrow><annotation encoding="application/x-tex">\colorbox{red}{→CLICK ME←}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2833299999999999em;vertical-align:-0.3em;"></span><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9833299999999998em;"><span style="top:-2.98333em;"><span class="pstrut" style="height:3.28333em;"></span><span class="stretchy colorbox" style="height:1.2833299999999999em;background-color:red;"></span></span><span style="top:-3.28333em;"><span class="pstrut" style="height:3.28333em;"></span><span class="mord boxpad"><span class="mord">→</span><span class="mord">C</span><span class="mord">L</span><span class="mord">I</span><span class="mord">C</span><span class="mord">K</span><span class="mord"> </span><span class="mord">M</span><span class="mord">E</span><span class="mord">←</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3em;"><span></span></span></span></span></span></span></span></span></a></p>
 
+                          </div>
+                        </div>
+                        <div class="layout-post-social">
+                          <div class="item reader">
+                            <div id="/post/secret-page/" class="leancloud-visitors view"
+                              data-flag-title="Secret Page">
+                              <span class="post-meta-item-text">阅读 </span>
+                              <span class="leancloud-visitors-count"></span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="layout-post-navigation">
+                          <div class="navigation-list">
+                            
+                          </div>
+                        </div>
+
+                        <div class="layout-comments"></div>
+                        
+                      </div>
+                    </div>
+
+                    <div class="col-12 col-lg-2 d-none d-lg-block">
+                      <div class="layout-post-sidebar">
+                        <div class="layout-sidebar-item">
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
-        
       </div>
+    </div>
 
-      
-        
-          <div id="gitalk-container"></div>
-        
+    <div class="layout-totop d-none"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
 
-        
-      
+    	<div class="layout-footer">
 
-      <div class="site-footer">
-  <div class="slogan"><div class='colorful'>『若君欲见极好之世界 则令界先见极好之君』</div><br>
-<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
-<!--End-->
-<script>
-  fetch('https://v1.hitokoto.cn')
-    .then(function (res){
-      return res.json();
-    })
-    .then(function (data) {
-      var hitokoto = document.getElementById('hitokoto');
-      hitokoto.innerText ='『' + data.hitokoto + '』——「' + data.from + '」';
-    })
-    .catch(function (err) {
-      console.error(err);
-    })
-</script>
-<p id="hitokoto">载入一言ing...</p></div>
-  <div class="social-container">
-    
-      
-        <a href="https://github.com/2005czq" target="_blank">
-          <i class="fab fa-github"></i>
-        </a>
-      
-    
-      
-    
-      
-        <a href="https://weibo.com/2005czq" target="_blank">
-          <i class="fab fa-weibo"></i>
-        </a>
-      
-    
-      
-        <a href="https://www.zhihu.com/people/czq-king" target="_blank">
-          <i class="fab fa-zhihu"></i>
-        </a>
-      
-    
-      
-    
-  </div>
-  </span>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv"><i class="fa fa-user" aria-hidden="true"></i></span> </span><span id="busuanzi_value_site_uv"></span> | </span><span id="busuanzi_container_site_pv"><i class="fa fa-eye" aria-hidden="true"></i></span> </span><span id="busuanzi_value_site_pv"></span></span>
-<br>
+		<div class="container">
+			<div class="row justify-content-lg-center">
+				<div class="col-12 col-lg-9">
+					<div class="footer">
+						<div class="row">
+							<div class="col-12 col-md-9">
+								<div class="footer-copy">
+									
+									<span>© 2019-2020 |  </span>
+									<a href="https://2005czq.github.io" title="CZQ-King">CZQ-King</a>
+									<span class="px-2">⋅</span>
+									
+									<style>
+  .colorful{
+	background-image: linear-gradient(to bottom, #ED4264, #FFEDBC);
+	color: transparent;
+	-webkit-background-clip: text;
+  }
+</style>
+
+<div class='colorful'>『若君欲见极好之世界 则令界先见极好之君』</div>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv">访客<span id="busuanzi_value_site_pv"></span>人 | </span>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_uv">访问<span id="busuanzi_value_site_uv"></span>次</span>
+
 <span id="timeDate">载入天数ing...</span>
 <span id="times">载入时分秒...</span>
 <script>
@@ -193,53 +236,82 @@
         document.getElementById("timeDate").innerHTML = "本站已低调存活"+dnum+"天";
         document.getElementById("times").innerHTML=hnum+"小时"+mnum+"分"+snum+"秒";
     }
-
 setInterval("createtime()",250);
-
-</script>
-<br>© 2019-2020 | CZQ-King | <a class="rss" href="https://2005czq.github.io/atom.xml" target="_blank">RSS</a>
-</div>
-
-
-    </div>
-    <script type="application/javascript">
-
-hljs.initHighlightingOnLoad()
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
-
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(function (res){
+      return res.json();
+    })
+    .then(function (data) {
+      var hitokoto = document.getElementById('hitokoto');
+      hitokoto.innerText ='『' + data.hitokoto + '』——「' + data.from + '」';
+    })
+    .catch(function (err) {
+      console.error(err);
+    })
+</script>
+<p id="hitokoto">载入一言ing...</p>
+									<div class="footer-icp d-none d-sm-inline-block">
+										<span class="px-2">⋅</span>
+										
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3 d-none d-md-block">
+								<div class="footer-links">
+									
+									
+									
+									
+									<span class="footer-links-item">
+										<a href="https://github.com/2005czq" target="_blank">
+											<i class="fa fa-github" aria-hidden="true"></i>
+										</a>
+									</span>
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									<span class="footer-links-item">
+										<a href="https://wpa.qq.com/msgrd?v=3&amp;uin=3376299315" target="_blank">
+											<i class="fa fa-qq" aria-hidden="true"></i>
+										</a>
+									</span>
+									
+									
+									
+									<span class="footer-links-item">
+										<a href="https://weibo.com/2005czq" target="_blank">
+											<i class="fa fa-weibo" aria-hidden="true"></i>
+										</a>
+									</span>
+									
+									
+									
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
+	</div>
 
-  
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-    <script>
+	<script type="text/javascript" src='https://2005czq.github.io/media/scripts/main.js'></script>
+	
 
-      var gitalk = new Gitalk({
-        clientID: '1ef4a85c2ccf8c4d9f2d',
-        clientSecret: '0f28f7a02b9df85bc9fdf9f0614b6fbfdfd5cf95',
-        repo: '2005czq.github.io',
-        owner: '2005czq',
-        admin: ['2005czq'],
-        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-        distractionFreeMode: false  // Facebook-like distraction free mode
-      })
+  </div>
+</body>
 
-      gitalk.render('gitalk-container')
-
-    </script>
-  
-
-  
-
-
-
-
-  </body>
 </html>
