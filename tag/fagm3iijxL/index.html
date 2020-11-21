@@ -35,7 +35,7 @@
 						<div class="logo">
 							<a href="https://2005czq.github.io">
 								<img class="logo"
-									src="https://2005czq.github.io/media/images/site_avatar.png?v=1605427588324"
+									src="https://2005czq.github.io/media/images/site_avatar.png?v=1605979219125"
 									alt="">
 							</a>
 						</div>
@@ -74,7 +74,7 @@
 							<div class="search-lightbox">
 								<div class="search-body">
 
-									<form id="gridea-search-form" data-update="1605427588324" action="/search/" class="search-form">
+									<form id="gridea-search-form" data-update="1605979219125" action="/search/" class="search-form">
 										<input type="text" name="q" id="s" value="" class="search-field" placeholder="请输入搜索关键词" aria-label="请输入搜索关键词" required="">
 										<button type="submit" class="submit" aria-label="Submit">
 											<i class="fa fa-search" aria-hidden="true"></i>
@@ -258,11 +258,11 @@
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <style>
-  .colorful{
+    .colorful{
 	background-image: linear-gradient(to bottom, #ED4264, #FFEDBC);
 	color: transparent;
 	-webkit-background-clip: text;
-  }
+    }
 </style>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -271,7 +271,7 @@
 <div class='colorful'>『若君欲见极好之世界 则令界先见极好之君』</div>
 
 <span id="timeDate">载入天数ing...</span>
-<span id="times">载入时分秒...</span>
+<span id="times">载入时分秒ing...</span>
 <script>
     var now = new Date();
     function createtime() {
@@ -292,19 +292,19 @@ setInterval("createtime()",250);
 <script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
 <script>
-  fetch('https://v1.hitokoto.cn')
+    fetch('https://v1.hitokoto.cn')
     .then(function (res){
-      return res.json();
+        return res.json();
     })
     .then(function (data) {
-      var hitokoto = document.getElementById('hitokoto');
-      hitokoto.innerText ='『' + data.hitokoto + '』——「' + data.from + '」';
+        var hitokoto = document.getElementById('hitokoto');
+        hitokoto.innerText ='『' + data.hitokoto + '』——「' + data.from + '」';
     })
     .catch(function (err) {
-      console.error(err);
+        console.error(err);
     })
 </script>
-<p id="hitokoto">载入一言ing...</p>
+<p id="hitokoto">载入「一言」ing...</p>
 									<div class="footer-icp d-none d-sm-inline-block">
 										<span class="px-2">⋅</span>
 										

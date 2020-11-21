@@ -33,7 +33,7 @@
 						<div class="logo">
 							<a href="https://2005czq.github.io">
 								<img class="logo"
-									src="https://2005czq.github.io/media/images/site_avatar.png?v=1605427588324"
+									src="https://2005czq.github.io/media/images/site_avatar.png?v=1605979219125"
 									alt="">
 							</a>
 						</div>
@@ -72,7 +72,7 @@
 							<div class="search-lightbox">
 								<div class="search-body">
 
-									<form id="gridea-search-form" data-update="1605427588324" action="/search/" class="search-form">
+									<form id="gridea-search-form" data-update="1605979219125" action="/search/" class="search-form">
 										<input type="text" name="q" id="s" value="" class="search-field" placeholder="请输入搜索关键词" aria-label="请输入搜索关键词" required="">
 										<button type="submit" class="submit" aria-label="Submit">
 											<i class="fa fa-search" aria-hidden="true"></i>
@@ -237,14 +237,14 @@
                               <div class="card-content col-8 col-md-9">
                                 <div class="card-body">
                                   <div class="header">
-                                    <a href="https://2005czq.github.io/post/continuous_fraction/" class="title">
-                                      <h4>[研究] 连分数问题</h4>
+                                    <a href="https://2005czq.github.io/post/yan-jiu-you-wu-xian-lian-fen-shu-yin-fa-de-bei-lun/" class="title">
+                                      <h4>[研究] 由无限连分数引发的悖论</h4>
                                     </a>
                                   </div>
                                   <div class="inner d-none d-sm-block">
                                     <div class="abstract">
-                                      <p>开学了，文章可能质量下降，见谅。<br>
-今天带来一个悖论。</p>
+                                      <p>下面的内容主要来源于 <a href="https://www.bilibili.com/video/av40753636">Mathologer 的一期视频</a>。</p>
+<p>如封面所示：</p>
 
                                     </div>
                                   </div>
@@ -256,7 +256,7 @@
                               </div>
                               <div class="card-thumb col-4 col-md-3">
                                 <div class="thumb">
-                                  <a href="https://2005czq.github.io/post/continuous_fraction/"
+                                  <a href="https://2005czq.github.io/post/yan-jiu-you-wu-xian-lian-fen-shu-yin-fa-de-bei-lun/"
                                     style="background-image: url('https://s2.ax1x.com/2020/02/28/3BHcLj.png');"></a>
                                 </div>
                               </div>
@@ -308,11 +308,11 @@
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <style>
-  .colorful{
+    .colorful{
 	background-image: linear-gradient(to bottom, #ED4264, #FFEDBC);
 	color: transparent;
 	-webkit-background-clip: text;
-  }
+    }
 </style>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -321,7 +321,7 @@
 <div class='colorful'>『若君欲见极好之世界 则令界先见极好之君』</div>
 
 <span id="timeDate">载入天数ing...</span>
-<span id="times">载入时分秒...</span>
+<span id="times">载入时分秒ing...</span>
 <script>
     var now = new Date();
     function createtime() {
@@ -342,19 +342,19 @@ setInterval("createtime()",250);
 <script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
 <script>
-  fetch('https://v1.hitokoto.cn')
+    fetch('https://v1.hitokoto.cn')
     .then(function (res){
-      return res.json();
+        return res.json();
     })
     .then(function (data) {
-      var hitokoto = document.getElementById('hitokoto');
-      hitokoto.innerText ='『' + data.hitokoto + '』——「' + data.from + '」';
+        var hitokoto = document.getElementById('hitokoto');
+        hitokoto.innerText ='『' + data.hitokoto + '』——「' + data.from + '」';
     })
     .catch(function (err) {
-      console.error(err);
+        console.error(err);
     })
 </script>
-<p id="hitokoto">载入一言ing...</p>
+<p id="hitokoto">载入「一言」ing...</p>
 									<div class="footer-icp d-none d-sm-inline-block">
 										<span class="px-2">⋅</span>
 										
