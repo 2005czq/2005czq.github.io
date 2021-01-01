@@ -2,13 +2,13 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://2005czq.github.io</id>
     <title>CZQ-King</title>
-    <updated>2020-12-06T03:44:29.794Z</updated>
+    <updated>2021-01-01T06:57:17.346Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://2005czq.github.io"/>
     <link rel="self" href="https://2005czq.github.io/atom.xml"/>
     <logo>https://2005czq.github.io/images/avatar.png</logo>
     <icon>https://2005czq.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, CZQ-King</rights>
+    <rights>All rights reserved 2021, CZQ-King</rights>
     <entry>
         <title type="html"><![CDATA[[生活] 2020夏：记一次期末考试]]></title>
         <id>https://2005czq.github.io/post/sheng-huo-2020-xia-ji-yi-ci-qi-mo-kao-shi/</id>
