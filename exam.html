@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>你还想不想要录取通知书了？你怎么校模排第八了？同样是上石门，为什么你比别人低三十分？</title>
+<style>
+    .colorful{
+    background-image: linear-gradient(to bottom, #ED4264, #FFEDBC);
+    color: transparent;
+    -webkit-background-clip: text;
+    font-size: 65px;
+    }
+</style>
+<script src="https://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<span class="time" style="background-image:linear-gradient(to bottom, #ED4264, #FFEDBC);color: transparent;-webkit-background-clip:text;font-size:75px"></span>
+
+<script>
+ var starttime = new Date("2021/6/26");
+ setInterval(function() {
+     var nowtime = new Date();
+     var time = starttime - nowtime;
+     var day = parseInt(time / 1000 / 60 / 60 / 24);
+     var hour = parseInt(time / 1000 / 60 / 60 % 24);
+     var minute = parseInt(time / 1000 / 60 % 60);
+     var seconds = parseInt(time / 1000 % 60);
+     $('.time').html("距离中考仅剩" + day + "天" + hour + "时" + minute + "分" + seconds + "秒");
+ }, 1200);
+</script>
+
+<div class='colorful'>『未经一番寒彻骨 焉得梅花扑鼻香』</div>
+
+</body>
+</html>
