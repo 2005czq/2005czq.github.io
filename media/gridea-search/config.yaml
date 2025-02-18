@@ -1,0 +1,25 @@
+proxies:
+  - name: "Azure"
+    type: ss
+    server: 20.2.145.216
+    port: 60256
+    cipher: aes-256-gcm
+    password: "IdeGXeQATGrTBlZ25tTM1Sb7oWH9kFnCMUMBUJOOaMX6CWQgwXkPQ28UEUXhOFtpblgZi5yvZEeERbhyzcu0tucZhvawtJMdyVdzlAqzgz1fEwtofBEgW83ZAepYDIkc"
+    udp: true
+
+proxy-groups:
+  - name: "Proxy"
+    type: select
+    proxies:
+      - "Azure"
+
+rules:
+  - DOMAIN-SUFFIX,bing.com,Proxy
+
+  - DOMAIN-SUFFIX,losedh.cyou,DIRECT
+  - DOMAIN-KEYWORD,loseprivacy,DIRECT
+  - DOMAIN-SUFFIX,blessingcr.com,DIRECT
+  - DOMAIN-KEYWORD,qwen,DIRECT
+
+  - GEOIP,CN,DIRECT
+  - MATCH,Proxy
