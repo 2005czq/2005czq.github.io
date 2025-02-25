@@ -1,0 +1,25 @@
+proxies:
+  - name: "Azure"
+    type: ss
+    server: 20.2.3.38
+    port: 63737
+    cipher: aes-256-gcm
+    password: "61FGLnlfkF0wijmINkiDqsskD62ANvwxYCk3p3LN1yKtCdnfNNa6Vxi2okprR4IFhQjQYwTMbOjPPYdFuW15lkvInuYXCCjXL4lPi6Zi2kgEmpkEDFmhA9S3oEZwoQ8bEqozyAhjI5Rx27TWliIGXtEqjzbsxRSTvi3sZ6GD5SoZn1LyPt0DVI76Aag8I2h2hH1Z988n96SdPj5oXYFxMHiMFfCsIvxtVv6BJL3ryOdcNSe4BqTcS8M80kJ0QjZx"
+    udp: true
+
+proxy-groups:
+  - name: "Proxy"
+    type: select
+    proxies:
+      - "Azure"
+
+rules:
+  - DOMAIN-SUFFIX,bing.com,Proxy
+
+  - DOMAIN-SUFFIX,losedh.cyou,DIRECT
+  - DOMAIN-KEYWORD,loseprivacy,DIRECT
+  - DOMAIN-SUFFIX,blessingcr.com,DIRECT
+  - DOMAIN-KEYWORD,qwen,DIRECT
+
+  - GEOIP,CN,DIRECT
+  - MATCH,Proxy
