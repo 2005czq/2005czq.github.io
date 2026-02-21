@@ -1,0 +1,400 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>[教程] 制作一个成语接龙AI | CZQ-King</title>
+
+<link rel="shortcut icon" href="https://zihim.me/favicon.ico?v=1771654729155">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://zihim.me/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    
+        <script src="https://cdn.jsdelivr.net/npm/mermaid@9.1.1/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script> 
+    
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            CZQ-King
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    Home
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    Archives
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    Tags
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/about" class="menu gt-a-link">
+                    About
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1771654729155"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    [教程] 制作一个成语接龙AI
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2019-08-23 ·
+                    </time>
+                    
+                        <a href="https://zihim.me/tag/Uac6-GzaNi/" class="post-tags">
+                            # 人工智能
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <p>最近闲的蛋疼，搞了个成语接龙 AI，现在让我来手把手教你搭建一个成语接龙 AI。</p>
+<!--more-->
+<p>我搞这个的目的大概是：</p>
+<ul>
+<li>跟<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi><mi>Q</mi></mrow><annotation encoding="application/x-tex">QQ</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">Q</span><span class="mord mathdefault">Q</span></span></span></span>小冰玩</li>
+<li><s>装逼</s></li>
+<li><s>虐菜</s></li>
+</ul>
+<p><s>说实在的，这个AI很菜。</s></p>
+<p><strong>注：这里的成语接龙定义：</strong></p>
+<ul>
+<li><strong>成语的首字要与上个成语的末字相同，并非拼音相同！例如 <code>稀奇古怪-怪声怪气</code> 就是一个合法的例子</strong></li>
+<li><strong>当有一方接不上时，另一方胜利</strong></li>
+<li><strong>由玩家指定开头成语</strong></li>
+</ul>
+<hr>
+<h2 id="成语库">成语库</h2>
+<p>若要想制作一个好的 AI，那么第一步一定是拥有一个完整的成语库。</p>
+<h3 id="寻找成语库">寻找成语库</h3>
+<p>目前使用的是在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mi>i</mi><mi>t</mi><mi>h</mi><mi>u</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">github</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">i</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">u</span><span class="mord mathdefault">b</span></span></span></span>上的一个成语库：<a href="https://github.com/pwxcoo/chinese-xinhua/blob/master/data/idiom.json">戳我</a></p>
+<p>首先点击右边的<code>Download</code>，等它加载完，然后一波<code>Ctrl+A Ctrl+C</code>，复制到文本文档，起名为<code>data.txt</code>。</p>
+<p>加载完是指浏览器标签页图标不再是加载圈圈，顺便检查一下文本文档最后面是否是<code>&quot;做张做智&quot;, &quot;abbreviation&quot;: &quot;zzzz&quot;}]</code>这几个字。如果是，恭喜你可以进入下一步了。</p>
+<h3 id="筛选">筛选</h3>
+<p>你会发现复制过来有很多定义啊，来源啊这些。而我们只需要一样东西——成语</p>
+<p>手筛非常麻烦（如果您很闲），肯定是让程序帮你筛啦！</p>
+<p>仔细观察可以发现：<code>&quot;word&quot;: </code>后面都是成语。</p>
+<p>所以利用<code>find</code>函数截取。</p>
+<p>具体实现<code>cut.cpp</code>：</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+string s;
+int main(){
+	ifstream I(&quot;data.txt&quot;);
+	ofstream O(&quot;data-fixed.txt&quot;);
+	while(getline(I,s)){//整行读入 
+		if(s.find(&quot;\&quot;word\&quot;: \&quot;&quot;)==-1)continue;//如果没找到就结束开始下一次整行读入 
+		else{//找到 
+			int i=0;//初始化i 
+			while(s.find(&quot;\&quot;word\&quot;: \&quot;&quot;,i)!=-1){//从i开始一直找&quot;word&quot;: &quot; 
+				int v=s.find(&quot;\&quot;&quot;,s.find(&quot;\&quot;word\&quot;: \&quot;&quot;,i)+10);//获取汉字右边的双引号 
+				//if(v-s.find(&quot;\&quot;word\&quot;: \&quot;&quot;,i)-9==8)
+				//若只需要四字成语请将上面一行的注释去掉即可 
+				O&lt;&lt;s.substr(s.find(&quot;\&quot;word\&quot;: \&quot;&quot;,i)+9,v-s.find(&quot;\&quot;word\&quot;: \&quot;&quot;,i)-9)&lt;&lt;&quot; &quot;;//截取汉字 
+				i=v;//记得i要往前走，否则会导致死循环 
+			}
+		}
+	}
+	return 0;
+}
+
+</code></pre>
+<p>最后输出的应该在<code>data-fixed.txt</code>里面。</p>
+<p>现在我们就有一个成语库了！<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo></mrow><annotation encoding="application/x-tex">(</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span></span></span></span>包含非四字成语共<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>30895</mn></mrow><annotation encoding="application/x-tex">30895</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">0</span><span class="mord">8</span><span class="mord">9</span><span class="mord">5</span></span></span></span>个成语<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mclose">)</span></span></span></span></p>
+<h2 id="接龙ai">接龙<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>I</mi></mrow><annotation encoding="application/x-tex">AI</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span></span></span></span></h2>
+<p>这个很简单，顺便使他会学习，当然这里没有用到什么神经网络之类的，只是用到了每个成语的权值，权值越大代表越难接上，每次接的时候就会选择权值最大的成语去接龙。</p>
+<p>目前由四种情况（人类水平<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>≤</mo></mrow><annotation encoding="application/x-tex">\le</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span></span></span></span>电脑水平）：</p>
+<ul>
+<li>电脑能接上人类的词：人类的词权值<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span>。</li>
+<li>电脑不能接上人类的词：人类的词权值<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>+</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">+100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">+</span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span>，因为当输入时如果人类输入的词在成语库找不到那么电脑不会判定这是一个成语，需要重新输入，所以人类的词必须都在成语库里存在，而电脑接词也是查找成语库，那么如果电脑接不上这个词，就说明这个词很强，所以权值<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>+</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">+100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">+</span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span>，到以后如果电脑说这个词人类也会接不出来。</li>
+<li>人类能接上电脑的词：电脑的词权值<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span></li>
+<li>人类接不上电脑的词（程序中输入<code>awsl</code>）：电脑的词权值<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">+</span><span class="mord">1</span></span></span></span>，为什么不<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>+</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">+100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">+</span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span>，因为人类水平<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>≤</mo></mrow><annotation encoding="application/x-tex">\le</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span></span></span></span>电脑水平，玩家接不上不代表电脑接不上。</li>
+</ul>
+<p>权值表在<code>learn.txt</code>中，在<strong>第一次</strong>玩之前必须运行<code>rebuild.exe</code>来创建权值表。若需要清空权值表也可以运行<code>rebuild.exe</code>。</p>
+<p>代码<code>rebuild.cpp</code>：</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int main(){
+	ofstream O(&quot;learn.txt&quot;);
+	for(int i=0;i&lt;30000;i++)O&lt;&lt;&quot;0 &quot;;//清除或重建
+}
+</code></pre>
+<p>代码<code>成语接龙.cpp</code>：</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+string s,now,last;
+int da;
+struct S{
+	string chinese;//成语
+	long long difficult;//权值
+}Data[31000];
+void read(){//读入成语和权值
+	string w;
+	ifstream I(&quot;data-fixed.txt&quot;);
+	ifstream I2(&quot;learn.txt&quot;);
+	while(I&gt;&gt;w){
+		Data[da].chinese=w;
+		I2&gt;&gt;Data[da].difficult;
+		da++;
+	}
+	I.close();
+	I2.close();
+}
+void save(){//保存权值
+	ofstream O(&quot;learn.txt&quot;);
+	for(int i=0;i&lt;31000;i++)O&lt;&lt;Data[i].difficult&lt;&lt;&quot; &quot;;
+}
+int main(){
+	long long maxx=-pow(2,63),maxn=-1,si,ok;
+	/*maxx最大权重 maxn最大权重的成语的下标 si玩家输入的成语在成语库的下标 ok成语是否在成语库里*/
+	read();
+	cout&lt;&lt;&quot;请输入开头成语\n&quot;;
+	while(1){
+		ok=0;
+		cout&lt;&lt;&quot;你:&quot;;
+		cin&gt;&gt;s;
+		for(int i=0;i&lt;31000;i++){//查找成语是否在成语库里
+			if(s==Data[i].chinese){//如果有
+				si=i;//存下标
+				ok=1;
+			}
+		}
+		cout&lt;&lt;&quot;AI:&quot;;
+		if(s==&quot;awsl&quot;){//玩家接不上
+			cout&lt;&lt;&quot;很遗憾，你失败了！&quot;;
+			Data[maxn].difficult++;
+			save();//学习
+			while(1);
+		}
+		if(!ok){//找不到这个成语
+			cout&lt;&lt;&quot;输入错误！\n&quot;;
+			continue;
+		}
+		Data[maxn].difficult--;save();//合法，接上了电脑的成语，所以学习
+		maxx=-pow(2,63),maxn=-1;//初始化，准备找权值最大的成语
+		for(int i=0;i&lt;31000;i++){//在成语库找
+			if(Data[i].chinese.substr(0,2)==s.substr(6,2)){//前提是要能接上
+				if(Data[i].difficult&gt;maxx){//取最大值
+					maxx=Data[i].difficult;
+					maxn=i;
+				}
+			}
+		}
+		if(maxn==-1){//没有找到，玩家胜利
+			cout&lt;&lt;&quot;恭喜你，你胜利了！\n&quot;;
+			Data[si].difficult+=100;
+			save();//学习
+			while(1);
+		}
+		Data[si].difficult--;save();//电脑能接上，学习
+		cout&lt;&lt;Data[maxn].chinese&lt;&lt;endl;//输出电脑的词语
+	}
+}
+</code></pre>
+<p>经过多局电脑玩家对决后，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>I</mi></mrow><annotation encoding="application/x-tex">AI</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span></span></span></span>会变得越来越强</p>
+<h2 id="自学成才">自学成才</h2>
+<p>但是，玩家和电脑对决，电脑学习到的只是不多，而且效率慢，所以我们需要电脑自己学习（即自己和自己对决）</p>
+<p>当时<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>l</mi><mi>p</mi><mi>h</mi><mi>a</mi><mi>G</mi><mi>o</mi><mtext> </mtext><mi>Z</mi><mi>e</mi><mi>r</mi><mi>o</mi></mrow><annotation encoding="application/x-tex">AlphaGo\ Zero</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">p</span><span class="mord mathdefault">h</span><span class="mord mathdefault">a</span><span class="mord mathdefault">G</span><span class="mord mathdefault">o</span><span class="mspace"> </span><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">o</span></span></span></span>通过自我博弈，仅仅博弈了三天就超过了<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>l</mi><mi>p</mi><mi>h</mi><mi>a</mi><mi>G</mi><mi>o</mi></mrow><annotation encoding="application/x-tex">AlphaGo</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">p</span><span class="mord mathdefault">h</span><span class="mord mathdefault">a</span><span class="mord mathdefault">G</span><span class="mord mathdefault">o</span></span></span></span>之前训练许久的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mi>e</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">Lee</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span><span class="mord mathdefault">e</span><span class="mord mathdefault">e</span></span></span></span>版本，博弈<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>40</mn></mrow><annotation encoding="application/x-tex">40</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mord">0</span></span></span></span>天超过曾打败柯洁的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>l</mi><mi>p</mi><mi>h</mi><mi>a</mi><mi>G</mi><mi>o</mi><mtext> </mtext><mi>M</mi><mi>a</mi><mi>s</mi><mi>t</mi><mi>e</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">AlphaGo\ Master</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">p</span><span class="mord mathdefault">h</span><span class="mord mathdefault">a</span><span class="mord mathdefault">G</span><span class="mord mathdefault">o</span><span class="mspace"> </span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault">a</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span>，还发现了新的围棋策略，为围棋这项古老游戏带来了新的见解。</p>
+<p><s>说了这么多牛逼的东西，说实在我这个AI进行自我对决还只是老办法赋权值而已</s></p>
+<p>主要思路还是赋权值</p>
+<ul>
+<li>如果<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>接的上<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span>，那么<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span>权值<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span></li>
+<li>如果<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>接不上<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span>权值<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">+</span><span class="mord">1</span></span></span></span></li>
+</ul>
+<p>训练方法：</p>
+<ol>
+<li>输入要训练的组数</li>
+<li>每组以一个随机成语开头，然后不断接下去，直到接不下去为止</li>
+<li>学习（赋权值）这轮的结果</li>
+</ol>
+<p><s>现在真的怀疑我这到底是不是人工智能了，我认为这只是一个分辨出哪些词容易接哪些词难接的机器</s></p>
+<p>代码：</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+#define ll long long//鸡肋的宏定义
+using namespace std;
+int N;
+struct S{
+	string chinese;
+	long long difficult;
+}Data[31000];
+int da;
+int main(){
+	mt19937 gen(time(0));//随机数种子
+	uniform_int_distribution&lt;&gt;dis(0,30894);//范围是从0到30894
+	/*下面开始读取成语库及权值表*/
+	string w;
+	ifstream I(&quot;data-fixed.txt&quot;);
+	ifstream I2(&quot;learn.txt&quot;);
+	while(I&gt;&gt;w){
+		Data[da].chinese=w;//读入成语
+		I2&gt;&gt;Data[da].difficult;//权值
+		da++;
+	}
+	I.close();
+	I2.close();
+	/*以上是读取数据*/
+	cout&lt;&lt;&quot;请输入练习次数（请勿在练习中中途关闭）:&quot;;//如果在中途关闭就是前功尽弃
+	cin&gt;&gt;N;
+	for(ll i=1;i&lt;=N;i++){//进行N次练习
+		int noi=dis(gen);//生成一个随机数
+		S now=Data[noi];//上一个词
+		//若要显示每局对弈过程，注释掉下面这行
+		//cout&lt;&lt;&quot;\n/*第&quot;&lt;&lt;i&lt;&lt;&quot;轮*/\n&quot;&lt;&lt;now.chinese&lt;&lt;endl;
+		while(1){//直到接不了
+			int maxx=-1,maxn=0;//权值最大及下标
+			S maxS;//权值最大的成语（这个很鸡肋）
+			for(int i=0;i&lt;31000;i++){//寻找能接的成语
+				if(now.chinese.substr(now.chinese.size()-2,2)==Data[i].chinese.substr(0,2)){
+					if(maxx&lt;Data[i].difficult){//找权值最大的
+						maxx=Data[i].difficult;
+						maxn=i;
+						maxS=Data[i];
+					}
+				}
+			}
+			if(maxx==-1){//居然接不上
+				Data[noi].difficult++;
+				break;
+			}
+			//若要显示每局对弈过程，注释掉下面这行
+			//cout&lt;&lt;Data[maxn].chinese&lt;&lt;endl;
+			Data[noi].difficult--;//接的上
+			noi=maxn;//现在接的成语变成上一个成语
+			now=maxS;//同上
+		}
+	}
+	ofstream O(&quot;learn.txt&quot;);
+	for(int i=0;i&lt;31000;i++)O&lt;&lt;Data[i].difficult&lt;&lt;&quot; &quot;;//更新权值表
+	O.close();
+	//因为权值表在练习完后才更新，所以如果中途关闭就会前功尽弃
+	cout&lt;&lt;&quot;\n\n\n\n练习完成&quot;;
+}
+</code></pre>
+<p>当时，我只用这个训练了<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span>分钟，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>I</mi></mrow><annotation encoding="application/x-tex">AI</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span></span></span></span>基本可以<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span>步内结束接龙（除非第一个成语就接不上）</p>
+<p>但是，他还是有可能会被玩家打败（不要跟我说你开两个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>I</mi></mrow><annotation encoding="application/x-tex">AI</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span></span></span></span>互打）因为它只会选择最难的成语去接龙，而不会考虑到用这个成语接龙后被反杀的概率。这也是他的一个致命的缺点。</p>
+<h2 id="慰问">慰问</h2>
+<p>话说要开学了，你们作业写完没啊<s>我还没动过</s></p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://zihim.me/post/CgFXD1eo2l/" class="post-title gt-a-link">
+                    [趣题] 将前520个素数分成差为521的两部分
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">若君欲见极好之世界 则令界先见极好之君</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        <img src="https://count.getloli.com/@CZQ-King?theme=booru-lewd&padding=0&scale=0.7&darkmode=auto" alt="visitor statistics" />
+    </div>
+    <div>
+        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
+                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://zihim.me/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>
